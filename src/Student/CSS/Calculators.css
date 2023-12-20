@@ -1,0 +1,158 @@
+/* Importing fonts from Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Julee&family=Just+Another+Hand&family=Kaushan+Script&family=Lobster&family=Pacifico&family=Playpen+Sans&family=Poppins&family=Prosto+One&family=Rampart+One&family=RocknRoll+One&family=Ubuntu&display=swap");
+
+/* Resetting default margin, padding, and box-sizing */
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+/* Common stylings and variables using CSS variables */
+:root {
+  --justAnotherHand: "Just Another Hand", cursive;
+  --kaushan: "Kaushan Script", cursive;
+  --lobster: "Lobster", sans-serif;
+  --pacifio: "Pacifico", cursive;
+  --playplen: "Playpen Sans", cursive;
+  --poppins: "Poppins", sans-serif;
+  --rocknRoll: "RocknRoll One", sans-serif;
+  --ubuntu: "Ubuntu", sans-serif;
+  --julee: "Julee", cursive;
+  --prosto: "Prosto One", sans-serif;
+  --rampart: "Rampart One", sans-serif;
+  --poetsen: "Poetsen One", sans-serif;
+}
+
+/* Styles for the main container of the calculators component */
+.calculators-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Styles for the top bar section */
+.calculators-container .topBar {
+  width: 100%;
+}
+
+.topBar {
+  width: 100%;
+  padding: 20px 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.topBar .home-btn {
+  width: 100px;
+  height: 40px;
+  background-color: #1784c7;
+  margin-left: 25px;
+}
+
+/* Styles for the filters section */
+.calculators-container .filters {
+  width: 80vw;
+  margin: 20px 0px;
+  padding: 10px 0px;
+  display: flex;
+  align-items: center;
+}
+
+.filters .leftSide {
+  width: 40%;
+}
+
+.filters .rightSide {
+  width: 60%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Styles for the toggle button */
+.rightSide .toggle {
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #f7f8fc;
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+}
+
+.toggle .toggle-btn {
+  width: 34px;
+  height: 20px;
+  padding: 0px 2px;
+  border-radius: 50px !important;
+  background-color: black !important;
+  transition: all 0.2s linear 0s;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.toggle-btn .btn {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: white !important;
+}
+
+/* Styles for the main calculator section */
+.calculator {
+  width: 90vw;
+  padding: 50px;
+  background-color: #f7f8fc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 25px;
+}
+
+/* Styles for the calculator table */
+.calculator-table {
+  width: 100%;
+  font-family: var(--poppins);
+}
+
+.calculator-table th {
+  border: none;
+  background-color: #f7f8fc;
+  color: #09005d;
+}
+
+.calculator-table input {
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-family: var(--rocknRoll);
+}
+
+.calculator-table input::placeholder {
+  font-family: var(--rocknRoll);
+}
+
+/* Styles for the "Add More" and "Calculate" buttons */
+.calculator .add-more-btn {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #1784c7;
+  color: white;
+  font-family: var(--poppins);
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+}
+
+.calculator .calculate-btn {
+  width: 30%;
+  padding: 10px 0px;
+  border: none;
+  border-radius: 5px;
+  background-color: #00c87e;
+  color: white;
+  font-family: var(--prosto);
+}

@@ -1,0 +1,308 @@
+/* Importing fonts from Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Julee&family=Just+Another+Hand&family=Kaushan+Script&family=Lobster&family=Pacifico&family=Playpen+Sans&family=Poppins&family=RocknRoll+One&family=Ubuntu&display=swap");
+
+/* Resetting default margin, padding, and box-sizing for all elements */
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+/* Common styling and variables defined using CSS variables */
+:root {
+  --justAnotherHand: "Just Another Hand", cursive;
+  --kaushan: "Kaushan Script", cursive;
+  --lobster: "Lobster", sans-serif;
+  --pacifio: "Pacifico", cursive;
+  --playplen: "Playpen Sans", cursive;
+  --poppins: "Poppins", sans-serif;
+  --rocknRoll: "RocknRoll One", sans-serif;
+  --ubuntu: "Ubuntu", sans-serif;
+  --julee: "Julee", cursive;
+}
+
+/* General styling for buttons to indicate they are clickable */
+button {
+  cursor: pointer;
+}
+
+/* Styling for the main container of the student login page */
+.studentLogin-container {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(75, 121, 161);
+}
+
+/* Styling for the logo */
+.studentLogin-container .logo {
+  width: 100px;
+  height: 100px;
+  position: fixed;
+  left: 7.81%;
+  top: 17.18%;
+}
+
+/* Styling for the logo image */
+.logo img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  z-index: 1;
+}
+
+/* Styling for the contents container within the student login container */
+.studentLogin-container .contents-container {
+  width: 100%;
+}
+
+/* Styling for the paragraph section within the contents container */
+.contents-container .paragraph {
+  width: 532px;
+  height: 400px;
+  font-size: 25px;
+  color: white;
+  position: fixed;
+  top: 30.4%;
+  left: 8.04%;
+}
+
+/* Styling for the paragraphs within the paragraph section */
+.paragraph p {
+  height: auto;
+  text-align: left;
+  line-height: 50px;
+  letter-spacing: mixed;
+  font-family: var(--julee);
+}
+
+/* Styling for the login container within the contents container */
+.contents-container .login-container {
+  width: 360px;
+  height: 400px;
+  border-radius: 10px;
+  background-color: rgb(161, 189, 252);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  position: fixed;
+  left: 60.46%;
+  top: 25.84%;
+}
+
+/* Styling for the login form within the login container */
+.login-container .loginForm {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+/* Styling for the form within the login form */
+.login-container form {
+  width: 100%;
+  height: 60%;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 25px;
+}
+
+/* Styling for the input fields within the form */
+.login-container form input {
+  width: 220px;
+  height: 45px;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: white;
+  font-family: var(--rocknRoll);
+}
+
+/* Styling for the placeholder text within the input fields */
+.login-container form input::placeholder {
+  font-family: var(--poppins);
+  font-size: 12px;
+}
+
+/* Styling for the login button within the form */
+.login-container form button {
+  width: 220px;
+  height: 45px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(24, 119, 242);
+  color: white;
+  font-family: var(--poppins);
+}
+
+/* Styling for the forget password link */
+.login-container a {
+  text-align: center;
+  text-decoration: none;
+  font-family: var(--poppins);
+  font-weight: 700;
+  color: white;
+}
+
+/* Styling for the line separator */
+.login-container .line {
+  border: 1px solid black;
+}
+
+/* Styling for the sign-up button */
+.login-container .signUp-btn {
+  margin-top: 20px;
+  width: 166px;
+  height: 38px;
+  border: none;
+  border-radius: 5px;
+  font-family: var(--poppins);
+  font-size: 12px;
+  font-weight: 600;
+  background-color: rgb(66, 183, 42);
+  color: white;
+}
+
+/* Styling for the login girl image */
+.login-container .loginGirl {
+  position: fixed;
+  left: 54.34%;
+  top: 51.32%;
+}
+
+/* Styling for the login boy image */
+.login-container .loginBoy {
+  position: fixed;
+  left: 81.7%;
+  top: 10.86%;
+}
+
+/* Styling for the sign-up container within the contents container */
+.contents-container .signUp-container {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(0, 0, 0, 50%);
+  transition: all 0.2s linear 0s;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  z-index: 2;
+}
+
+/* Styling for the sign-up form within the sign-up container */
+.signUp-container .signUpForm {
+  width: 703px;
+  height: 500px;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Styling for the top contents within the sign-up form */
+.signUpForm .topContents {
+  width: 100%;
+  height: 20%;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Styling for the form title within the top contents */
+.topContents .formTitle {
+  height: 40px;
+  padding: 5px;
+  border-radius: 5px;
+  font-weight: 900;
+  font-size: 18px;
+  font-family: var(--poppins);
+  border: none;
+  text-align: center;
+  background-color: rgb(217, 229, 255);
+  color: rgb(0, 0, 0, 50%);
+}
+
+/* Styling for the close icon within the top contents */
+.topContents .close-icon {
+  cursor: pointer;
+}
+
+/* Styling for the form within the sign-up form */
+.signUpForm form {
+  width: 100%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 20px;
+}
+
+/* Styling for the first row within the form */
+.signUpForm form .row1 {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+/* Styling for the second row within the form */
+.signUpForm form .row2 {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+/* Styling for the input fields within the form */
+.signUpForm form input:nth-child(1) {
+  width: 243px;
+  height: 44px;
+  font-family: var(--rocknRoll);
+}
+
+.signUpForm form input:nth-child(2) {
+  width: 243px;
+  height: 44px;
+  font-family: var(--rocknRoll);
+}
+
+.signUpForm form input:nth-child(3) {
+  width: 243px;
+  height: 44px;
+  font-family: var(--rocknRoll);
+}
+
+.signUpForm form input:nth-child(4) {
+  width: 243px;
+  height: 44px;
+  font-family: var(--rocknRoll);
+}
+
+.signUpForm form input {
+  width: 540px;
+  height: 44px;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: rgb(217, 217, 217);
+}
+
+/* Styling for the placeholder text within the input fields */
+.signUpForm form input::placeholder {
+  color: black;
+  font-family: var(--poppins);
+  font-weight: 600;
+}
+
+/* Styling for the sign-up button within the form */
+.signUpForm form .signUp-btn {
+  width: 165px;
+  height: 44px;
+  border-radius: 5px;
+  border: none;
+  background-color: rgb(64, 123, 255);
+  color: white;
+  font-family: var(--poppins);
+  font-weight: 700;
+}
