@@ -33,7 +33,7 @@ To get started with the Student Community Website, follow these instructions.
 1. Clone the repository:
 
 ```bash
-git clone (https://github.com/zubair5235/starsforlifebeta.git)
+git clone https://github.com/zubair5235/starsforlifebeta.git
 cd starsforlifebeta
 ```
 
