@@ -63,3 +63,21 @@ We welcome contributions from the community! To contribute to the project:
 4. Push to the branch: `git push origin feature/your-feature`.
 5. Create a pull request.
 
+## ScreenShots
+
+## Start Page:
+
+![image](https://github.com/zubair5235/starsforlifebeta/assets/93807069/afd0d290-b675-42cc-90b2-e76705b886a4)
+
+## Student Login Page:
+
+![image](https://github.com/zubair5235/starsforlifebeta/assets/93807069/87d339f4-ca54-411b-a418-ea6c34a50e6b)
+
+## Student Main Page:
+
+![image](https://github.com/zubair5235/starsforlifebeta/assets/93807069/b20a08c9-85a2-4307-8768-5973daa651e3)
+
+For more details run this project locally...
+
+
+
