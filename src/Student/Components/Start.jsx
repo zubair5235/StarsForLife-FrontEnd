@@ -29,7 +29,7 @@ function Start() {
           {/* Admin login option */}
           <div className="logins admin">
             <h2>Admin</h2>
-            <Link to="">
+            <Link to="/adminlogin">
               <img src={enter} alt="enter-icon" />
             </Link>
           </div>
@@ -37,7 +37,7 @@ function Start() {
           {/* Alumni login option */}
           <div className="logins alumni">
             <h2>Alumni</h2>
-            <Link to="">
+            <Link to="/alumnilogin">
               <img src={enter} alt="enter-icon" />
             </Link>
           </div>
@@ -45,7 +45,7 @@ function Start() {
           {/* Stars coordinator login option */}
           <div className="logins sc">
             <h2>Stars Coordinator</h2>
-            <Link to="">
+            <Link to="coordinatorlogin">
               <img src={enter} alt="enter-icon" />
             </Link>
           </div>

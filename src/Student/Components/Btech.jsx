@@ -17,7 +17,7 @@ function Btech() {
 
   // Function to navigate to the home page
   function handleHomeNavigation() {
-    Navigate("/mainpage");
+    Navigate("/studentMainpage");
   }
 
   // Function to open the contribution form

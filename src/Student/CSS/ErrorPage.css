@@ -1,0 +1,53 @@
+/* Importing fonts from Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Julee&family=Just+Another+Hand&family=Kaushan+Script&family=Lobster&family=Pacifico&family=Playpen+Sans&family=Poppins&family=Prosto+One&family=Rampart+One&family=RocknRoll+One&family=Ubuntu&family=Waterfall&family=Zen+Tokyo+Zoo&display=swap");
+
+/* Resetting default margin, padding, and box-sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Common stylings and variables using CSS variables */
+:root {
+  --justAnotherHand: "Just Another Hand", cursive;
+  --kaushan: "Kaushan Script", cursive;
+  --lobster: "Lobster", sans-serif;
+  --pacifio: "Pacifico", cursive;
+  --playplen: "Playpen Sans", cursive;
+  --poppins: "Poppins", sans-serif;
+  --rocknRoll: "RocknRoll One", sans-serif;
+  --ubuntu: "Ubuntu", sans-serif;
+  --julee: "Julee", cursive;
+  --prosto: "Prosto One", sans-serif;
+  --rampart: "Rampart One", sans-serif;
+  --poetsen: "Poetsen One", sans-serif;
+  --waterfall: "Waterfall", cursive;
+  --zen-tokyo: "Zen Tokyo Zoo", cursive;
+}
+
+.errorContainer{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 25px;
+    background-image: url("../Assets/PNF4.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-attachment: fixed;
+    background-color: white;
+}
+
+.errorContainer .home-btn{
+    padding: 10px;
+    border-width: 5px;
+    border-color: rgb(140, 187, 229);
+    background-color: white;
+    border-radius: 5px;
+    font-family: var(--poppins);
+    font-weight: 600;
+    box-shadow: inset 10px 10px 10px rgba(0, 0, 0, 0.2);
+}

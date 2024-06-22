@@ -24,18 +24,40 @@ function Calculators() {
 
   // Navigation function to go back to the main page
   function handleHomeNavigation() {
-    Navigate("/mainpage");
+    Navigate("/studentMainpage");
   }
 
   // Function to handle adding more subjects or semesters
-  function handleAddMore() {
-    // Implementation for adding more subjects or semesters
-  }
+function handleAddMore() {
+  // Create a new row element
+  const newRow = document.createElement('tr');
+  
+  // Populate the row with cells for each column
+  newRow.innerHTML = `
+    <td contentEditable="true">${inCGPA ? "Semester" : "Subject"} ${document.querySelectorAll('.calculator-table tbody tr').length + 1}</td>
+    <td><input type="text" /></td>
+    <td><input type="number" /></td>
+    <td>
+      <!-- Delete row icon -->
+      <span class="delete-row">
+        <button class="dlt-btn">Delete</button>
+      </span>
+    </td>
+  `;
+  
+  // Add click event to the delete icon
+  const deleteIcon = newRow.querySelector('.delete-row');
+  deleteIcon.addEventListener('click', handleDeleteRow);
+  
+  // Append the new row to the table body
+  document.querySelector('.calculator-table tbody').appendChild(newRow);
+}
 
   // Function to handle deleting a row (subject or semester)
   function handleDeleteRow(e) {
-    const row = e.target.parentElement;
-    row.parentElement.remove();
+    const row = e.target.closest('tr');
+    // Remove the row from the table
+    row.remove();
   }
 
   // Function to toggle between CGPA and GPA modes
@@ -115,14 +137,7 @@ function Calculators() {
                 </td>
                 <td>
                   {/* Delete row icon */}
-                  <Icon
-                    icon="carbon:close-filled"
-                    width="20"
-                    height="20"
-                    onClick={(e) => {
-                      handleDeleteRow(e);
-                    }}
-                  />
+                  <span className="delete-row"><button className="dlt-btn" onClick={(e) => {handleDeleteRow(e)}}>Delete</button></span>
                 </td>
               </tr>
             </tbody>

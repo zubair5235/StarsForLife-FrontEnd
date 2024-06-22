@@ -12,7 +12,7 @@ function Mtech() {
 
   // Function to handle navigation to the home page
   function handleHomeNavigation() {
-    Navigate("/mainpage");
+    Navigate("/studentMainpage");
   }
 
   // Function to handle opening the new contribution form

@@ -16,7 +16,7 @@ function ProfileSettings() {
 
   // Function to handle navigation to the home page
   function handleHomeNavigation() {
-    Navigate("/mainpage");
+    Navigate("/studentMainpage");
   }
 
   // Rendering the component

@@ -16,7 +16,7 @@ function Arts() {
 
   // Function to handle navigation to the home page
   function handleHomeNavigation() {
-    Navigate("/mainpage");
+    Navigate("/studentMainpage");
   }
 
   // Function to open the new contribution form

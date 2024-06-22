@@ -15,7 +15,7 @@ function StarsDay() {
 
   // Function to navigate to the main page
   function handleHomeNavigation() {
-    Navigate("/mainpage");
+    Navigate("/studentMainpage");
   }
 
   // Functions to handle opening and closing new participation form
