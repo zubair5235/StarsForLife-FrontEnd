@@ -1,32 +1,58 @@
-# Starsforlife(Student Community Website)
+# Starsforlife
 
-Welcome to the Starsforlife! This project is a dynamic and engaging platform built with React and CSS to connect students, foster collaboration, and provide a space for meaningful interactions within the academic community.
+StarsForLife is a student community website designed to enhance the academic and social experience for students, faculty coordinators, admin, and alumni. The project leverages React for the frontend and Node.js with Express.js for the backend, providing a comprehensive platform for communication, resource sharing, and event management.
 
 ## Table of Contents
 
-- [Features](#features)
-- [Getting Started](#getting-started)
+- [Student Page](#student-page)
+- [Stars Coordinator](#stars-coordinator)
+- [Admin Page](#admin-page)
+- [Alumni Page](#alumni-page)
+- [Additional Features](#additional-features)
 - [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
+- [Running Project](#running-project)
+- [Contribute](#contribute)
+- [Note](#note)
 
-## Features
+## Student Page
 
-- **User Authentication:** Securely log in and register to access personalized features.
-- **Dynamic Dashboard:** A dynamic dashboard displaying relevant information and updates.
-- **Forum:** Engage in discussions within the student community through the forum.
-- **Events:** Stay informed about upcoming events and activities.
-- **Profile Management:** Customize your profile and keep it up to date.
-- **Responsive Design:** Enjoy a seamless experience across various devices.
+The student page offers a wide array of features to facilitate academic and social engagement:
 
-## Getting Started
+- **Faculty Suggestions:** Students can provide feedback about faculty members, helping peers make informed choices during the FFCS (Fully Flexible Credit System) process.
+- **Materials:** A repository where students can access subject materials and previous question papers shared by their peers.
+- **Messages:** A section where students can view messages sent by the stars coordinator.
+- **Meetings:** Information on scheduled meetings by the stars coordinator, with the ability for students to respond.
+- **GPA & CGPA Calculators:** Tools to calculate GPA and CGPA.
+- **Dudes:** A feature to find other students by their department and district.
+- **Profile Page:** Students can update their personal details.
+- **Account Settings:** A page to update the password and other account settings.
+- **Achievements:** A section displaying recent achievements of star students, updated by the admin.
+- **Placement Materials:** A page where placement preparation materials are uploaded by the admin.
 
-To get started with the Student Community Website, follow these instructions.
+## Stars Coordinator
 
-### Prerequisites
+Faculty coordinators have access to several management features:
 
-- Node.js and npm installed on your machine.
+- **Schedule Meeting:** Schedule meetings with students and track responses in the meeting history.
+- **Send Messages:** Send messages to students and view response history.
+- **StarsDay Registration:** View details of students registered for Stars Day, including gender counts, names, emails, mobile numbers, districts, departments, and batches.
+ 
+### Admin Page
+
+The admin page provides comprehensive control over the platform:
+- **Update Achievements:** Manage and update the achievements section for star students.
+- **Manage Users:** Oversee user accounts and permissions.
+- **Upload Placement Materials:** Add and manage placement preparation materials.
+  
+### Alumni Page
+
+The alumni page is designed for former students:
+
+- **StarsDay Registration:** Alumni can register for Stars Day events.
+
+### Additional Features
+- **User Authentication:** Secure login and registration for all user types.
+- **Themes:** Toggle between dark and light themes for better user experience.
 
 ### Installation
 
@@ -34,28 +60,50 @@ To get started with the Student Community Website, follow these instructions.
 
 ```bash
 git clone https://github.com/zubair5235/starsforlifebeta.git
+```
+
+2. Navigate to project directory:
+
+```bash
 cd starsforlifebeta
 ```
 
-2. Install dependencies:
+3. Install Frontend dependencies:
 
 ```bash
+cd client
 npm install
 ```
 
-## Usage
-
-1. Start the development server:
+4. Install Backend dependencies:
 
 ```bash
+cd ../server
+npm install
+```
+
+### Running Project
+
+1. Start Backend server:
+
+```bash
+cd server
 npm start
 ```
 
-2. Open your browser and navigate to `http://localhost:3000` to view the application.
+2. Start the following development server:
 
-## Contributing
+```bash
+cd starsforlifebeta
+npm start
+```
 
-We welcome contributions from the community! To contribute to the project:
+3. Open your browser and navigate to 'http://localhost:3000'
+
+
+### Contribute
+
+We welcome contributions from the community! If you'd like to contribute, please follow these steps:
 
 1. Fork the repository.
 2. Create a new branch for your feature or bug fix: `git checkout -b feature/your-feature`.
@@ -63,21 +111,11 @@ We welcome contributions from the community! To contribute to the project:
 4. Push to the branch: `git push origin feature/your-feature`.
 5. Create a pull request.
 
-## ScreenShots
+### Note
 
-## Start Page:
+you need to install nodejs for to run this project
 
-![image](https://github.com/zubair5235/starsforlifebeta/assets/93807069/afd0d290-b675-42cc-90b2-e76705b886a4)
-
-## Student Login Page:
-
-![image](https://github.com/zubair5235/starsforlifebeta/assets/93807069/87d339f4-ca54-411b-a418-ea6c34a50e6b)
-
-## Student Main Page:
-
-![image](https://github.com/zubair5235/starsforlifebeta/assets/93807069/b20a08c9-85a2-4307-8768-5973daa651e3)
-
-For more details run this project locally...
+you can install nodejs from `https://nodejs.org/en/download/package-manager`.
 
 
 
