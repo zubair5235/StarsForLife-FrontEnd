@@ -16,12 +16,22 @@ function FacultySuggestion() {
 
   // Handle navigation to the home page
   function handleHomeNavigation() {
-    Navigate("/mainpage");
+    Navigate("/studentMainpage");
   }
 
   // Open the new suggestion form
   function handleOpenNewSuggestion() {
     suggestionFormContainer.current.classList.add("show");
+  }
+
+  const count = 2;
+
+  function handleAddSuggestion(){
+    const newRow = document.createElement('tr');
+
+    newRow.innerHTML = `<td>${count+1}</td><td></td><td></td><td></td><td></td>`;
+
+  document.querySelector(".faculty-suggestion-table").appendChild(newRow);
   }
 
   // Close the new suggestion form
@@ -232,7 +242,7 @@ function FacultySuggestion() {
             </div>
             <div className="row4">
               {/* Finish Button */}
-              <button className="confirm-btn">Finish</button>
+              <button className="confirm-btn" onClick={(e) => {handleAddSuggestion(e)}}>Finish</button>
             </div>
           </form>
         </div>

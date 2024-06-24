@@ -134,6 +134,15 @@
   font-family: var(--rocknRoll);
 }
 
+.dlt-btn{
+  margin: 2px solid white;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: red;
+  color: white;
+  font-family: var(--poppins);
+}
+
 /* Styles for the "Add More" and "Calculate" buttons */
 .calculator .add-more-btn {
   padding: 10px;

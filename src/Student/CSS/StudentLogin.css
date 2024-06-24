@@ -42,6 +42,23 @@ button {
   top: 17.18%;
 }
 
+.studentLogin-container .home-btn-container{
+  margin: 10px;
+  float: right;
+}
+
+.home-btn-container .home-btn{
+    width: 110px;
+    height: 45px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(255, 0, 0);
+    color: white;
+    font-family: var(--poppins);
+    font-size: 14px;
+    font-weight: 700;
+}
+
 /* Styling for the logo image */
 .logo img {
   border-radius: 50%;

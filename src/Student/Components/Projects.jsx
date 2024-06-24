@@ -19,7 +19,7 @@ function Projects() {
 
   // Navigation function to redirect to the main page
   function handleHomeNavigation() {
-    Navigate("/mainpage");
+    Navigate("/studentMainpage");
   }
 
   // Function to open the contribution form

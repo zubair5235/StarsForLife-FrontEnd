@@ -9,7 +9,7 @@ function Meetings() {
 
   // Function to handle navigation to the main page
   function handleHomeNavigation() {
-    Navigate("/mainpage");
+    Navigate("/studentMainpage");
   }
 
   return (

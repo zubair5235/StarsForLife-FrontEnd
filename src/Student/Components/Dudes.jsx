@@ -16,7 +16,7 @@ function Dudes() {
 
   // Function to handle navigation to the home page
   function handleHomeNavigation() {
-    Navigate("/mainpage");
+    Navigate("/studentMainpage");
   }
 
   // State to manage the toggle between Department Dudes and District Dudes
