@@ -117,5 +117,5 @@ you need to install nodejs for to run this project
 
 you can install nodejs from 'https://nodejs.org/en/download/package-manager'.
 
-
+### Thank you for checking out StarsForLife! 
 
