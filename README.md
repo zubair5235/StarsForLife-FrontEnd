@@ -115,7 +115,7 @@ We welcome contributions from the community! If you'd like to contribute, please
 
 you need to install nodejs for to run this project
 
-you can install nodejs from `https://nodejs.org/en/download/package-manager`.
+you can install nodejs from 'https://nodejs.org/en/download/package-manager'.
 
 
 
