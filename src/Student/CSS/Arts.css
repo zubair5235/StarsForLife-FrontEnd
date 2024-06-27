@@ -1,14 +1,11 @@
-/* Importing Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Julee&family=Just+Another+Hand&family=Kaushan+Script&family=Lobster&family=Pacifico&family=Playpen+Sans&family=Poppins&family=Prosto+One&family=Rampart+One&family=RocknRoll+One&family=Ubuntu&display=swap");
 
-/* Resetting default margin, padding, and box-sizing for all elements */
 * {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
 }
 
-/* Common stylings and variables using CSS variables */
 :root {
   --justAnotherHand: "Just Another Hand", cursive;
   --kaushan: "Kaushan Script", cursive;
@@ -24,7 +21,6 @@
   --poetsen: "Poetsen One", sans-serif;
 }
 
-/* Styling for the main container of the arts component */
 .arts-container {
   width: 100vw;
   height: 100vh;
@@ -33,7 +29,6 @@
   align-items: center;
 }
 
-/* Styling for the top bar containing buttons */
 .topBar {
   width: 100%;
   padding: 20px 10px;
@@ -42,7 +37,6 @@
   align-items: center;
 }
 
-/* Styling for buttons in the top bar */
 .topBar button {
   border: none;
   border-radius: 5px;
@@ -54,7 +48,6 @@
   column-gap: 5px;
 }
 
-/* Styling for home button in the top bar */
 .topBar .home-btn {
   width: 100px;
   height: 40px;
@@ -62,14 +55,12 @@
   background-color: #1784c7;
 }
 
-/* Styling for home button image in the top bar */
 .topBar .home-btn img {
   width: 30px;
   height: 30px;
   border-radius: 50%;
 }
 
-/* Styling for contribute button in the top bar */
 .topBar .contribution-btn {
   height: 40px;
   padding: 0px 10px;
@@ -77,7 +68,6 @@
   background-color: #00ca80;
 }
 
-/* Styling for filters section */
 .arts-container .filters {
   width: 80vw;
   padding: 10px 0px;
@@ -87,19 +77,16 @@
   align-items: center;
 }
 
-/* Styling for the left side of the filters */
 .filters .leftSide {
   width: 40%;
 }
 
-/* Styling for search bar in the filters */
 .leftSide .filters-searchBar {
   margin-left: 15px;
   display: flex;
   align-items: center;
 }
 
-/* Styling for search icon in the search bar */
 .filters-searchBar img {
   width: 30px;
   height: 30px;
@@ -107,19 +94,16 @@
   background-color: white;
 }
 
-/* Styling for input in the search bar */
 .filters-searchBar input {
   height: 30px;
   border: none;
   font-family: var(--rocknRoll);
 }
 
-/* Styling for focused input in the search bar */
 .filters-searchBar input:focus {
   outline: none;
 }
 
-/* Styling for the right side of the filters */
 .filters .rightSide {
   width: 60%;
   display: flex;
@@ -127,7 +111,6 @@
   column-gap: 15px;
 }
 
-/* Styling for filter input in the right side */
 .rightSide .filter input {
   height: 30px;
   border: none;
@@ -135,111 +118,71 @@
   font-family: var(--rocknRoll);
 }
 
-/* Styling for hover effect on input in filters */
 .filters input:hover {
   outline: 2px solid black;
 }
 
-/* Styling for materials table */
 .arts-container .materials-table {
   width: 80vw;
   margin: 20px 0px;
 }
 
-/* Styling for the table */
 .materials-table table {
   width: 100%;
   border: 2px solid black;
   font-family: var(--playplen);
 }
 
-/* Styling for table header */
 table thead {
   background-color: #36304a;
   color: white;
 }
 
-/* Styling for hover effect on table row */
 table tbody tr:hover {
   background-color: #0342ff;
   color: white;
   transition: all 0.2s linear 0s;
 }
 
-/* Styling for even rows in the table */
 table tbody tr:nth-of-type(even) {
   background-color: #f7f8fc;
   color: black !important;
 }
 
-/* Styling for hover effect on even rows in the table */
 table tbody tr:nth-of-type(even):hover {
   background-color: #0342ff;
   color: white;
   transition: all 0.2s linear 0s;
 }
 
-/* Styling for table cells */
 table tbody td {
   padding: 5px 0px;
   text-align: center;
 }
 
-/* Styling for table filters section */
 .arts-container .table-filters {
   width: 80vw;
   display: flex;
-  justify-content: space-between;
-}
-
-/* Styling for the left side of table filters */
-.table-filters .leftSide {
-  width: 50%;
-}
-
-/* Styling for content filter section */
-.leftSide .content-filter {
-  width: 100%;
-  display: flex;
   align-items: center;
-  column-gap: 10px;
+  justify-content: center;
 }
 
-/* Styling for input in content filter */
-.content-filter input {
-  width: 50px;
-  border-radius: 5px;
-}
-
-/* Styling for the right side of table filters */
-.table-filters .rightSide {
-  display: flex;
-  column-gap: 10px;
-}
-
-/* Styling for pagination buttons */
-.rightSide button {
-  width: 40px;
-  height: 30px;
-  border-radius: 30%;
-  font-weight: 900;
-}
-
-/* Styling for previous button */
-.rightSide .previous-btn {
-  border: 1px solid black;
-  background-color: white;
-  color: #2699fb;
-}
-
-/* Styling for next button */
-.rightSide .next-btn {
+.table-filters .top-btn {
+  width: 150px;
+  height: 45px;
   border: none;
-  background-color: #2699fb;
-  color: white;
+  border-radius: 5px;
+  background-color: gold;
 }
 
-/* Styling for contribution form container */
+.top-btn a {
+  text-decoration: none;
+  color: black;
+  font-size: 1em;
+  font-weight: 700;
+  font-family: var(--poppins);
+}
+
 .contribution-form-container {
   width: 100vw;
   height: 100vh;
@@ -252,12 +195,10 @@ table tbody td {
   top: 0%;
 }
 
-/* Styling for showing contribution form */
 .show {
   display: flex;
 }
 
-/* Styling for contribution form */
 .cf-form {
   width: 50%;
   height: 500px;
@@ -266,7 +207,6 @@ table tbody td {
   background-color: white;
 }
 
-/* Styling for contribution form header */
 .cf-form .cf-form-header {
   width: 100%;
   height: 10%;
@@ -281,12 +221,10 @@ table tbody td {
   justify-content: flex-end;
 }
 
-/* Styling for contribution form header text */
 .cf-form-header p {
   padding-right: 275px;
 }
 
-/* Styling for contribution form content */
 .cf-form form {
   width: 100%;
   height: 90%;
@@ -298,7 +236,6 @@ table tbody td {
   row-gap: 10%;
 }
 
-/* Styling for contribution form rows */
 .cf-form form .cf-row1 {
   width: 100%;
   display: flex;
@@ -310,13 +247,25 @@ table tbody td {
   display: flex;
 }
 
+.cf-row2 .fileInput-btn {
+  width: 250px;
+  height: 50px;
+  border: none;
+  padding: 15px 10px;
+}
+
+.cf-row2 .fileInput-btn input {
+  width: 100%;
+  height: 100%;
+  background-color: inherit;
+}
+
 .cf-row3 {
   display: flex;
   justify-content: center;
   align-content: center;
 }
 
-/* Styling for contribution confirmation button */
 .confirm-btn {
   width: 150px;
   height: 50px;
@@ -327,7 +276,6 @@ table tbody td {
   font-family: var(--poppins);
 }
 
-/* Styling for contribution form inputs */
 .cf-form form input {
   width: 250px;
   height: 50px;
@@ -338,7 +286,296 @@ table tbody td {
   color: black;
 }
 
-/* Styling for contribution form input placeholder */
 .cf-form form input::placeholder {
   color: black;
+}
+
+@media (max-width: 768px) {
+  * {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+  }
+
+  .arts-container {
+    width: 100vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .topBar {
+    width: 100%;
+    padding: 20px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .topBar button {
+    font-family: var(--prosto);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 5px;
+  }
+
+  .topBar .home-btn {
+    height: 40px;
+    padding: 0px 10px;
+    background-color: #1784c7;
+    margin-left: 0px !important;
+  }
+
+  .topBar .home-btn img {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+  }
+
+  .topBar .contribution-btn {
+    background-color: #00ca80;
+    height: 40px;
+    padding: 0px 10px;
+    margin-right: 0px !important;
+  }
+
+  .arts-container .filters {
+    width: 80%;
+    height: auto;
+    margin: 20px 0px;
+    padding: 10px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    row-gap: 25px;
+  }
+
+  .filters .leftSide {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .filters .leftSide .filters-searchBar {
+    margin-left: 0px;
+    display: flex;
+    align-items: center;
+  }
+
+  .filters-searchBar img {
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    background-color: white;
+  }
+
+  .filters-searchBar input {
+    height: 30px;
+    border: none;
+    font-family: var(--rocknRoll);
+  }
+
+  .filters-searchBar input:focus {
+    outline: none;
+  }
+
+  .filters .rightSide {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    row-gap: 10px;
+  }
+
+  .rightSide .filter input {
+    height: 30px;
+    border: none;
+    padding: 0px 5px;
+    font-family: var(--rocknRoll);
+  }
+
+  .filters input:hover {
+    outline: 2px solid black;
+  }
+
+  .arts-container .materials-table {
+    width: 80%;
+    margin: 20px 0px;
+  }
+
+  .materials-table table {
+    width: 100%;
+    font-family: var(--playplen);
+    font-size: 0.5em;
+    border: 2px solid black;
+  }
+
+  table thead {
+    background-color: #36304a;
+    color: white;
+  }
+
+  table tbody tr:hover {
+    background-color: #0342ff;
+    color: white;
+    transition: all 0.2s linear 0s;
+  }
+
+  table tbody tr:nth-of-type(even) {
+    background-color: #f7f8fc;
+    color: black !important;
+  }
+
+  table tbody tr:nth-of-type(even):hover {
+    background-color: #0342ff;
+    color: white;
+    transition: all 0.2s linear 0s;
+  }
+
+  table tbody td {
+    text-align: center;
+    padding: 2px 0px;
+  }
+
+  .arts-container .table-filters {
+    width: 80vw;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .table-filters .top-btn {
+    width: 100px;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    background-color: gold;
+    font-size: 1em;
+  }
+
+  .top-btn a {
+    text-decoration: none;
+    color: black;
+    font-size: 1em;
+    font-family: var(--poppins);
+  }
+
+  .contribution-form-container {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(217, 217, 217, 50%);
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0%;
+  }
+
+  .show {
+    display: flex;
+  }
+
+  .contribution-form-container .cf-form {
+    width: 90%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cf-form .cf-form-header {
+    width: 100%;
+    height: 10%;
+    padding: 0px 25px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    background-color: #00ca80;
+    color: white;
+    font-family: var(--prosto);
+    display: flex;
+    align-items: center;
+  }
+
+  .cf-form .cf-form-header p {
+    padding-right: 15px;
+  }
+
+  .cf-form .cf-row1 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 20px;
+  }
+
+  .cf-form form .cf-row2 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    row-gap: 20px;
+  }
+
+  .cf-row2 input {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .cf-row2 .fileInput-btn {
+    width: 250px;
+    height: 50px;
+    border: none;
+    padding: 15px 10px;
+  }
+
+  .cf-row2 .fileInput-btn input {
+    width: 100%;
+    height: 100%;
+    background-color: inherit;
+  }
+
+  .cf-row3 {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+  }
+
+  .confirm-btn {
+    width: 150px;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+    background-color: #00ca80;
+    color: white;
+    font-family: var(--poppins);
+  }
+
+  .cf-form form input {
+    width: 250px;
+    height: 50px;
+    border-radius: 5px;
+    padding: 0px 10px;
+    background-color: #eedd99;
+    font-family: var(--rocknRoll);
+    color: black;
+  }
+
+  .cf-form form input::placeholder {
+    color: black;
+  }
 }

@@ -1,12 +1,11 @@
-// Importing necessary modules and assets
 import { Link, useNavigate } from "react-router-dom";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import Slider from "react-slick";
 import "../CSS/MainPage.css";
 
-/* Assets */
+import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
+
 import Logo from "../Assets/Logo.png";
-import AP from "../Assets/AP.png";
-import RR from "../Assets/RR.png";
 import SI from "../Assets/Search Icon 1.png";
 import FFCS1 from "../Assets/FFCS1.png";
 import FFCS2 from "../Assets/FFCS2.png";
@@ -15,40 +14,67 @@ import Materials2 from "../Assets/Materials2.png";
 import Events1 from "../Assets/Events1.png";
 import Events2 from "../Assets/Events2.png";
 import Others1 from "../Assets/Others1.png";
-import Ohters2 from "../Assets/Others2.png";
+import Others2 from "../Assets/Others2.png";
 import User from "../Assets/User.png";
-import Talk from "../Assets/Talk.png";
-import TalkIcon from "../Assets/Talkicon.png";
-import Down from "../Assets/Down.png";
-import Enter from "../Assets/Enter.png";
 
-// React component for the main page of the student
+import img1 from "../Assets/Developer.png";
+import img2 from "../Assets/Design.png";
+import img3 from "../Assets/User.png";
+import img4 from "../Assets/Events1.png";
+
 function StudentMainPage() {
-  
-  // State to manage the dark mode
   const [isDarkMode, setIsDarkMode] = useState(false);
-
-  // Ref for user dropdown and chat box
   const userDropDown = useRef(null);
-  const chatBox = useRef(null);
+  const buttonsDD = useRef(null);
+  const [isOnCampus, setIsOnCampus] = useState(true);
+  const [showButtonsDD, setShowButtonsDD] = useState(false);
+  const [imageIndex, setImageIndex] = useState(0);
   const Navigate = useNavigate();
 
-  // Function to toggle dark mode
+  const images = [img1, img2, img3, img4];
+
+  const NextArrow = ({ onClick }) => {
+    return (
+      <div className="arrow next" onClick={onClick}>
+        <FaArrowRight />
+      </div>
+    );
+  };
+
+  const PrevArrow = ({ onClick }) => {
+    return (
+      <div className="arrow prev" onClick={onClick}>
+        <FaArrowLeft />
+      </div>
+    );
+  };
+
+  const settings = {
+    infinite: true,
+    lazyLoad: true,
+    speed: 300,
+    slidesToShow: 3,
+    centerMode: true,
+    centerPadding: 0,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
+    beforeChange: (current, next) => setImageIndex(next),
+  };
+
+  useEffect(() => {
+    document.body.style.backgroundColor = isDarkMode ? "black" : "white";
+    document.body.style.color = isDarkMode ? "white" : "black";
+  }, [isDarkMode]);
+
+  useEffect(() => {
+    buttonsDD.current.style.display = showButtonsDD ? "flex" : "none";
+  }, [showButtonsDD]);
+
   function theme(e) {
     e.target.classList.toggle("on");
     setIsDarkMode(!isDarkMode);
   }
 
-  // Applying styles based on dark mode state
-  if (isDarkMode) {
-    document.body.style.backgroundColor = "black";
-    document.body.style.color = "white";
-  } else {
-    document.body.style.backgroundColor = "white";
-    document.body.style.color = "black";
-  }
-
-  // Function to show dropdown menu
   function showDropDown(e) {
     if (e.target.hasAttribute("class", "links")) {
       const dropDown = e.target.children.item(2);
@@ -56,75 +82,85 @@ function StudentMainPage() {
     }
   }
 
-  // Function to close dropdown menu
   function closeDropDown(e) {
     const dropDown = e.target;
     dropDown.classList.remove("show");
   }
 
-  // Function to show user dropdown
   function showUserDropDown() {
     userDropDown.current.classList.toggle("show");
   }
 
-  // Function to show chat box
-  function showChatBox() {
-    chatBox.current.classList.add("showChatBox");
+  function handleOncampus(e) {
+    setIsOnCampus(!isOnCampus);
+    e.target.style.backgroundColor = isOnCampus ? "green" : "red";
   }
 
-  // Function to hide chat box
-  function hideChatBox() {
-    chatBox.current.classList.remove("showChatBox");
+  function handleShowButtonDD() {
+    setShowButtonsDD(!showButtonsDD);
   }
 
-  //Function to handle logout
-  function handleLogout(){
+  function handleLogout() {
     Navigate("/");
   }
 
-  // JSX structure for the component
   return (
     <>
       <div className="main-container">
-        {/* Top navigation bar */}
         <div className="top-nav-bar">
           <div className="left">
             <div className="logo">
               <img src={Logo} alt="Logo" />
             </div>
           </div>
-
           <div className="right">
-            {/* Buttons for Activity Pub and Resource Request */}
             <div className="buttons">
-              <div className="ap-btn">
-                <img src={AP} alt="ap-icon" />
-                <h2>Activity Pub</h2>
+              <div className="toggle-btn" onClick={(e) => theme(e)}>
+                <div className="btn"></div>
               </div>
-              <div className="rr-btn">
-                <img src={RR} alt="rr-icon" />
-                <h2>Resource Request</h2>
+              <div className="down-btn" onClick={handleShowButtonDD}>
+                ▼
+              </div>
+              <button className="oncampus-btn btn" onClick={handleOncampus}>
+                Oncampus
+              </button>
+              <button className="queries-btn btn">
+                <a href="mailto:mohamedzubair235@gmail.com">Queries</a>
+              </button>
+              <button className="logout-btn btn" onClick={handleLogout}>
+                Logout
+              </button>
+              <div className="buttons-dd" ref={buttonsDD}>
+                <button
+                  className="oncampus-btn dd-btn"
+                  onClick={(e) => {
+                    handleOncampus(e);
+                  }}
+                >
+                  Oncampus
+                </button>
+                <button className="queries-btn dd-btn">
+                  <a href="mailto:mohamedzubair235@gmail.com">Queries</a>
+                </button>
+                <button className="logout-btn dd-btn" onClick={handleLogout}>
+                  Logout
+                </button>
               </div>
             </div>
           </div>
         </div>
-
-        {/* Side navigation bar */}
         <div className="side-nav-bar">
           <div className="top-items">
-            {/* Search bar */}
+            {/* <div className="expansion-logo">➲</div> */}
             <div className="searchBar">
               <input type="search" />
               <img src={SI} alt="search-icon" />
             </div>
           </div>
           <hr />
-
           <div className="middle-items">
-            {/* Navigation links with dropdowns */}
             <nav>
               <ul>
-                {/* FFCS dropdown */}
                 <li
                   className="links link1"
                   onClick={(e) => {
@@ -148,13 +184,8 @@ function StudentMainPage() {
                         Faculty Suggestion
                       </Link>
                     </li>
-                    <li>
-                      <Link to="/ffcs/timetablemaker">Time Table Maker</Link>
-                    </li>
                   </ul>
                 </li>
-
-                {/* Materials dropdown */}
                 <li
                   className="links link2"
                   onClick={(e) => {
@@ -184,8 +215,6 @@ function StudentMainPage() {
                     </li>
                   </ul>
                 </li>
-
-                {/* Stars Coordinator dropdown */}
                 <li
                   className="links link3"
                   onClick={(e) => {
@@ -207,8 +236,6 @@ function StudentMainPage() {
                     </li>
                   </ul>
                 </li>
-
-                {/* Events dropdown */}
                 <li
                   className="links link4"
                   onClick={(e) => {
@@ -232,8 +259,6 @@ function StudentMainPage() {
                     </li>
                   </ul>
                 </li>
-
-                {/* Others dropdown */}
                 <li
                   className="links link5"
                   onClick={(e) => {
@@ -242,7 +267,7 @@ function StudentMainPage() {
                 >
                   <img src={Others1} alt="Others-icon" />
                   Others
-                  <img src={Ohters2} alt="Others-icon" />
+                  <img src={Others2} alt="Others-icon" />
                   <ul
                     className="dropDown"
                     onMouseLeave={(e) => {
@@ -261,19 +286,7 @@ function StudentMainPage() {
             </nav>
           </div>
           <hr />
-
           <div className="bottom-items">
-            {/* Dark mode toggle button */}
-            <div
-              className="toggle-btn"
-              onClick={(e) => {
-                theme(e);
-              }}
-            >
-              <div className="btn"></div>
-            </div>
-
-            {/* User profile dropdown */}
             <div className="user-profile">
               <img src={User} alt="user-icon" onClick={showUserDropDown} />
               <span></span>
@@ -282,52 +295,25 @@ function StudentMainPage() {
                 <li>
                   <Link to="/profile/profilesettings">Profile Settings</Link>
                 </li>
-                <li>OnCampus</li>
-                <li>
-                  <a href="mailto:mohamedzubair235@gmail.com">Queries</a>
-                </li>
-                <li onClick={handleLogout}>Logout</li>
               </ul>
             </div>
           </div>
         </div>
-
-        {/* Shining star container */}
         <div className="shiningStar-container">
-          <button className="congrats-btn">Congrats</button>
+          <Slider {...settings}>
+            {images.map((img, idx) => (
+              <div
+                className={idx === imageIndex ? "slide activeSlide" : "slide "}
+              >
+                <img src={img} alt={img} />
+              </div>
+            ))}
+          </Slider>
         </div>
-
-        {/* Placement info container */}
         <div className="placementInfo-container"></div>
-
-        {/* Talk button */}
-        <div className="talk">
-          <img src={Talk} alt="talk-icon" onClick={showChatBox} />
-        </div>
-
-        {/* Chat box */}
-        <div className="chatBox" ref={chatBox}>
-          <div className="topBar">
-            <div className="left">
-              <img src={TalkIcon} alt="talk-icon" />
-              <p>Talk</p>
-            </div>
-            <div className="right">
-              <button className="clear-btn">Clear</button>
-              <img src={Down} alt="close-icon" onClick={hideChatBox} />
-            </div>
-          </div>
-          <div className="chatBox-body">
-            <div className="chatInput">
-              <input type="text" placeholder="Enter Your Message..."/>
-              <img src={Enter} alt="enter-icon" />
-            </div>
-          </div>
-        </div>
       </div>
     </>
   );
 }
 
-// Exporting the StudentMainPage component
 export default StudentMainPage;

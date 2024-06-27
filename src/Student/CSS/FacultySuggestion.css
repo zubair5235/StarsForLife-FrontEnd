@@ -1,14 +1,11 @@
-/* Importing fonts from Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Julee&family=Just+Another+Hand&family=Kaushan+Script&family=Lobster&family=Pacifico&family=Playpen+Sans&family=Poppins&family=Prosto+One&family=Rampart+One&family=RocknRoll+One&family=Ubuntu&display=swap");
 
-/* Resetting default styles for all elements */
 * {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
 }
 
-/* Define custom CSS variables for font families */
 :root {
   --justAnotherHand: "Just Another Hand", cursive;
   --kaushan: "Kaushan Script", cursive;
@@ -24,7 +21,6 @@
   --poetsen: "Poetsen One", sans-serif;
 }
 
-/* Styling for the faculty-suggestion-container */
 .faculty-suggestion-container {
   width: 100vw;
   height: 100vh;
@@ -33,7 +29,6 @@
   align-items: center;
 }
 
-/* Styling for the topBar section */
 .topBar {
   width: 100%;
   padding: 20px 10px;
@@ -53,7 +48,6 @@
   column-gap: 5px;
 }
 
-/* Styling for the home-btn */
 .topBar .home-btn {
   width: 100px;
   height: 40px;
@@ -67,7 +61,6 @@
   border-radius: 50%;
 }
 
-/* Styling for the add-suggestion-btn */
 .topBar .add-suggestion-btn {
   background-color: #00ca80;
   height: 40px;
@@ -84,7 +77,6 @@
   align-items: center;
 }
 
-/* Styling for the leftSide of filters */
 .filters .leftSide {
   width: 40%;
 }
@@ -112,7 +104,6 @@
   outline: none;
 }
 
-/* Styling for the rightSide of filters */
 .filters .rightSide {
   width: 60%;
   display: flex;
@@ -135,7 +126,6 @@
   outline: 2px solid black;
 }
 
-/* Styling for the faculty-suggestion-table */
 .faculty-suggestion-container .faculty-suggestion-table {
   width: 80vw;
   margin: 20px 0px;
@@ -174,56 +164,28 @@ table tbody td {
   padding: 5px 0px;
 }
 
-/* Styling for the table-filters */
 .faculty-suggestion-container .table-filters {
   width: 80vw;
   display: flex;
-  justify-content: space-between;
-}
-
-.table-filters .leftSide {
-  width: 50%;
-}
-
-.leftSide .content-filter {
-  width: 100%;
-  display: flex;
   align-items: center;
-  column-gap: 10px;
+  justify-content: center;
 }
 
-.content-filter input {
-  width: 50px;
-  border-radius: 5px;
-}
-
-.table-filters .rightSide {
-  width: 50%;
-  display: flex;
-  justify-content: flex-end;
-  column-gap: 10px;
-}
-
-.rightSide button {
-  width: 40px;
-  height: 30px;
-  border-radius: 30%;
-  font-weight: 900;
-}
-
-.rightSide .previous-btn {
-  background-color: white;
-  color: #2699fb;
-  border: 1px solid black;
-}
-
-.rightSide .next-btn {
-  background-color: #2699fb;
-  color: white;
+.table-filters .top-btn {
+  width: 150px;
+  height: 45px;
   border: none;
+  border-radius: 5px;
+  background-color: gold;
 }
 
-/* Styling for the Suggestion form */
+.top-btn a {
+  text-decoration: none;
+  color: black;
+  font-size: 1em;
+  font-family: var(--poppins);
+}
+
 .suggestion-form-container {
   width: 100vw;
   height: 100vh;
@@ -236,7 +198,6 @@ table tbody td {
   top: 0%;
 }
 
-/* Show class to display the suggestion form */
 .show {
   display: flex;
 }
@@ -338,4 +299,312 @@ table tbody td {
 
 .form form input::placeholder {
   color: black;
+}
+
+@media (max-width: 768px) {
+  * {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+  }
+
+  .faculty-suggestion-container {
+    width: 100vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .topBar {
+    width: 100%;
+    padding: 20px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .topBar button {
+    font-family: var(--prosto);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 5px;
+  }
+
+  .topBar .home-btn {
+    height: 40px;
+    padding: 0px 10px;
+    background-color: #1784c7;
+    margin-left: 0px !important;
+  }
+
+  .topBar .home-btn img {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+  }
+
+  .topBar .add-suggestion-btn {
+    background-color: #00ca80;
+    height: 40px;
+    padding: 0px 10px;
+    margin-right: 0px;
+  }
+
+  .faculty-suggestion-container .filters {
+    width: 80%;
+    height: auto;
+    margin: 20px 0px;
+    padding: 10px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    row-gap: 25px;
+  }
+
+  .filters .leftSide {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .filters .leftSide .filters-searchBar {
+    margin-left: 0px;
+    display: flex;
+    align-items: center;
+  }
+
+  .filters-searchBar img {
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    background-color: white;
+  }
+
+  .filters-searchBar input {
+    height: 30px;
+    border: none;
+    font-family: var(--rocknRoll);
+  }
+
+  .filters-searchBar input:focus {
+    outline: none;
+  }
+
+  .filters .rightSide {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    row-gap: 10px;
+  }
+
+  .rightSide .filter input {
+    height: 30px;
+    border: none;
+    padding: 0px 5px;
+    font-family: var(--rocknRoll);
+  }
+
+  .rightSide .filter:last-child {
+    margin-right: 0px !important;
+  }
+
+  .filters input:hover {
+    outline: 2px solid black;
+  }
+
+  .faculty-suggestion-container .faculty-suggestion-table {
+    width: 80%;
+    margin: 20px 0px;
+  }
+
+  .faculty-suggestion-table table {
+    width: 100%;
+    font-family: var(--playplen);
+    font-size: 0.5em;
+    border: 2px solid black;
+  }
+
+  table thead {
+    background-color: #36304a;
+    color: white;
+  }
+
+  table tbody tr:hover {
+    background-color: #0342ff;
+    color: white;
+    transition: all 0.2s linear 0s;
+  }
+
+  table tbody tr:nth-of-type(even) {
+    background-color: #f7f8fc;
+    color: black !important;
+  }
+
+  table tbody tr:nth-of-type(even):hover {
+    background-color: #0342ff;
+    color: white;
+    transition: all 0.2s linear 0s;
+  }
+
+  table tbody td {
+    text-align: center;
+    padding: 2px 0px;
+  }
+
+  .faculty-suggestion-container .table-filters {
+    width: 80vw;
+    font-size: 0.7em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .table-filters .top-btn {
+    width: 100px;
+    height: 35px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    background-color: gold;
+  }
+
+  .top-btn a {
+    text-decoration: none;
+    color: black;
+    font-size: 1em;
+    font-family: var(--poppins);
+  }
+
+  .suggestion-form-container {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(217, 217, 217, 50%);
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0%;
+  }
+
+  .show {
+    display: flex;
+  }
+
+  .form {
+    width: 90%;
+    height: 90%;
+    background-color: white;
+    border-radius: 10px;
+    border: 2px solid black;
+  }
+
+  .form .form-header {
+    width: 100%;
+    height: 10%;
+    padding: 0px 25px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    background-color: #00ca80;
+    color: white;
+    font-family: var(--prosto);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .form-header p {
+    padding-right: 15px;
+  }
+
+  .form form {
+    width: 100%;
+    height: 90%;
+    padding: 50px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    row-gap: 5%;
+  }
+
+  .form form .row1 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    row-gap: 10px;
+  }
+
+  .form form .row2 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    row-gap: 10px;
+  }
+
+  .row2 .starRating-input {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .form form .row3 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    row-gap: 10px;
+  }
+
+  .row3 button {
+    width: 250px;
+    height: 50px;
+    border-radius: 5px;
+    padding: 0px 10px;
+    background-color: #1784c7;
+    font-family: var(--poppins);
+    color: white;
+    border: none;
+  }
+
+  .confirm-btn {
+    width: 150px;
+    height: 50px;
+    background-color: #00ca80;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-family: var(--poppins);
+  }
+
+  .form form input {
+    width: 75%;
+    height: 50px;
+    border-radius: 5px;
+    padding: 0px 10px;
+    background-color: #eedd99;
+    font-family: var(--rocknRoll);
+    color: black;
+  }
+
+  .form form input::placeholder {
+    color: black;
+  }
 }
