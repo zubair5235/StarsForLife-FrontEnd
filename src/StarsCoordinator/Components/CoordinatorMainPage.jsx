@@ -1,5 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
-import { Icon } from "@iconify/react/dist/iconify.js";
+import { useNavigate } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import "../CSS/CoordinatorMainPage.css";
 

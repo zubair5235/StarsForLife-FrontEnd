@@ -24,7 +24,7 @@ function StudentLogin() {
   }
 
   function toHome() {
-    navigate('/');
+    navigate("/");
   }
 
   function Authenticate(e) {
@@ -35,17 +35,18 @@ function StudentLogin() {
   return (
     <>
       <div className="studentLogin-container">
-        {/* Logo */}
         <div className="logo">
           <img src={Logo} alt="Logo" />
         </div>
 
         <div className="home-btn-container">
-          <button className="home-btn" onClick={toHome}> Home </button>
+          <button className="home-btn" onClick={toHome}>
+            {" "}
+            Home{" "}
+          </button>
         </div>
 
         <div className="contents-container">
-          {/* Paragraph explaining use cases of the website */}
           <div className="paragraph">
             <p>
               Fear of FFCS? Can’t Find a right material to SCORE well? Want to
@@ -55,12 +56,13 @@ function StudentLogin() {
               Buddy? Fear of Placements .... No problem we have solutions for
               that...
             </p>
+            <a href="#login">
+              <button className="scrollDown-btn">Continue</button>
+            </a>
           </div>
 
-          {/* Login container */}
           <div className="login-container">
-            {/* Login Form */}
-            <div className="loginForm">
+            <div className="loginForm" id="login">
               <form onSubmit={Authenticate}>
                 <input type="text" placeholder="Email or Username" />
                 <input type="password" placeholder="Password" />
@@ -72,17 +74,14 @@ function StudentLogin() {
               <br />
               <br />
 
-              {/* Divider line */}
               <div className="line"></div>
 
               <br />
 
-              {/* Button to create a new account */}
               <button className="signUp-btn" onClick={handleCreateAccount}>
                 Create New Account
               </button>
 
-              {/* Assets used in the login */}
               <img
                 src={LoginGirl}
                 alt="login girl logo"
@@ -93,18 +92,13 @@ function StudentLogin() {
             </div>
           </div>
 
-          {/* Sign up container */}
           <div className="signUp-container" id="signup" ref={signupRef}>
-            {/* Overlay to hide the background of the page while signup form is open */}
             <div className="overlay"></div>
 
-            {/* Signup form */}
             <div className="signUpForm">
-              {/* Top Section of the Signup Form */}
               <div className="topContents">
                 <div className="formTitle">Sign Up</div>
                 <div className="close-icon">
-                  {/* Close icon to hide the signup form */}
                   <Icon
                     icon="carbon:close-filled"
                     width="32"
@@ -114,7 +108,6 @@ function StudentLogin() {
                 </div>
               </div>
 
-              {/* Form for new user Registration */}
               <form onSubmit="">
                 <div className="row1">
                   <input type="text" placeholder="Name" />
@@ -129,7 +122,6 @@ function StudentLogin() {
                 <input type="email" placeholder="Email" />
                 <input type="password" placeholder="Password" />
                 <input type="password" placeholder="Confirm Password" />
-                {/* Sign up button */}
                 <button type="submit" className="signUp-btn">
                   Sign Up
                 </button>

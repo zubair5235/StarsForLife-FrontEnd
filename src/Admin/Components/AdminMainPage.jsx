@@ -96,9 +96,7 @@ function AdminMainPage() {
         </button>
       </div>
       <div className="sectionContainer">
-        {!showAchievementForm &&
-        !showUploadForm &&
-        !showUsers ? (
+        {!showAchievementForm && !showUploadForm && !showUsers ? (
           <p className="textContent" id="textContent">
             Welcome to the Admin Dashboard. Please select an option from <br />{" "}
             above to get started.
@@ -179,7 +177,7 @@ function AdminMainPage() {
         ) : showUsers ? (
           <div className="userContents">
             <div className="buttonContainer">
-            <button className="export-btn">Export</button>
+              <button className="export-btn">Export</button>
             </div>
             <div className="tableContainer">
               <div className="users-table">

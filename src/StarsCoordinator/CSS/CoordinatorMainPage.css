@@ -1,7 +1,5 @@
-/* Importing fonts from Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Julee&family=Just+Another+Hand&family=Kaushan+Script&family=Lobster&family=Pacifico&family=Playpen+Sans&family=Poppins&family=RocknRoll+One&family=Ubuntu&display=swap");
 
-/* Resetting default margin, padding, and box-sizing for all elements */
 * {
   margin: 0px;
   padding: 0px;
@@ -277,15 +275,15 @@
   justify-content: center;
 }
 
-.table-container .messageHistory-table{
+.table-container .messageHistory-table {
   width: 100%;
 }
 
-.table-container .meetingHistory-table{
+.table-container .meetingHistory-table {
   width: 100%;
 }
 
-.table-container .starsReg-table{
+.table-container .starsReg-table {
   width: 100%;
 }
 
@@ -325,12 +323,11 @@
   text-align: center;
 }
 
-/* Styling for the response button within the table */
 .repeat-btn {
   padding: 5px;
   border: none;
   border-radius: 5px;
-  background-color: #00C87E;
+  background-color: #00c87e;
   font-family: var(--playpen);
 }
 
@@ -377,4 +374,260 @@
   font-family: var(--rocknRoll);
   font-size: 14px;
   cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  * {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+  }
+
+  .contentContainer {
+    width: 100vw;
+    height: auto;
+    overflow-y: scroll !important;
+    background-color: rgb(62, 69, 76);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contentContainer .topContents {
+    width: 84%;
+    height: auto;
+    margin: 20px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    row-gap: 20px;
+  }
+
+  .contentContainer .topContents .btn {
+    width: 175px;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: rgb(23, 132, 199);
+    color: white;
+    font-family: var(--rocknRoll);
+    font-size: 0.8em;
+  }
+
+  .contentContainer .sectionContainer {
+    width: 90%;
+    height: 500px;
+    padding: 10px;
+    text-align: center;
+    background-color: rgb(44, 49, 53);
+    border-radius: 10px;
+    box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.25);
+    color: white;
+    font-family: var(--rampart);
+    font-size: 1em;
+  }
+
+  .contentContainer .sectionContainer .meetingForm-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contentContainer .sectionContainer .meetingForm-container .topContents {
+    width: 100%;
+    height: 10%;
+    margin: 0px;
+  }
+
+  .contentContainer .sectionContainer .meetingForm-container .meeting-form {
+    width: 100%;
+    height: 90%;
+    padding: 10px 0px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .meetingForm-container .meeting-form .row1 {
+    width: 100%;
+    height: 34%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 10px;
+  }
+
+  .row1 input {
+    width: 150px;
+    height: 35px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: rgb(238, 221, 153);
+    font-family: var(--poppins);
+    font-weight: 700;
+  }
+
+  .meeting-form .row2 {
+    width: 100%;
+    height: 34%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 10px;
+  }
+
+  .row2 input {
+    width: 150px;
+    height: 35px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: rgb(238, 221, 153);
+    font-family: var(--poppins);
+    font-weight: 700;
+  }
+
+  .meeting-form .row3 {
+    width: 100%;
+    height: 32%;
+    font-size: 0.5em;
+    padding: 0px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .meeting-form input::placeholder {
+    color: black;
+    font-family: var(--poppins);
+    font-weight: 900;
+  }
+
+  .row3 button {
+    width: 100px;
+    height: 35px;
+    padding: 10px;
+    color: white;
+    font-family: var(--poppins);
+    font-weight: 700;
+  }
+
+  .row3 .abort-btn {
+    background-color: rgb(255, 0, 0);
+  }
+
+  .row3 .schedule-btn {
+    background-color: rgb(0, 202, 128);
+  }
+
+  .contentContainer .sectionContainer .messageForm-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .messageForm-container .topContents {
+    width: 100%;
+    height: 10%;
+    margin: 0px;
+    background-color: rgb(0, 202, 128);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    font-family: var(--prosto);
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .messageForm-container .message-form {
+    width: 100%;
+    height: 90%;
+    background-color: white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 25px;
+  }
+
+  .message-form .row1 {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .row1 textarea {
+    width: 90%;
+    height: 75%;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: rgb(238, 221, 153);
+    font-family: var(--poppins);
+    font-size: 14px;
+  }
+
+  .row1 textarea::placeholder {
+    font-family: var(--poppins);
+    font-size: 14px;
+    color: black;
+  }
+
+  .message-form .row2 {
+    width: 100%;
+    height: 25%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .row2 input {
+    width: 242px;
+    height: 57px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: rgb(238, 221, 153);
+    font-family: var(--poppins);
+    font-weight: 700;
+  }
+
+  .message-form .row3 {
+    width: 100%;
+    height: 25%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+  }
+
+  .row3 button {
+    width: 100px;
+    height: 35px;
+    padding: 10px;
+    color: white;
+    font-family: var(--poppins);
+    font-weight: 700;
+  }
+
+  .row3 .abort-btn {
+    background-color: rgb(255, 0, 0);
+  }
+
+  .row3 .send-btn {
+    background-color: rgb(0, 202, 128);
+  }
+
+  .contentContainer .bottomContents {
+    width: 74%;
+    height: 14%;
+    margin: 50px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 }

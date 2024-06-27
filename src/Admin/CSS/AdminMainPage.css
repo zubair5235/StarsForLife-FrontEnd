@@ -1,7 +1,5 @@
-/* Importing fonts from Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Julee&family=Just+Another+Hand&family=Kaushan+Script&family=Lobster&family=Pacifico&family=Playpen+Sans&family=Poppins&family=RocknRoll+One&family=Ubuntu&display=swap");
 
-/* Resetting default margin, padding, and box-sizing for all elements */
 * {
   margin: 0px;
   padding: 0px;
@@ -111,7 +109,7 @@
   justify-content: space-evenly;
 }
 
-.row1 input[type=file] {
+.row1 input[type="file"] {
   opacity: 0;
 }
 
@@ -146,14 +144,14 @@
   background-color: rgb(0, 202, 128);
 }
 
-.sectionContainer .uploadForm-container{
+.sectionContainer .uploadForm-container {
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
 }
 
-.uploadForm-container .topContents{
+.uploadForm-container .topContents {
   width: 100%;
   height: 10%;
   background-color: rgb(0, 202, 128);
@@ -166,7 +164,7 @@
   justify-content: center;
 }
 
-.uploadForm-container .upload-form-one{
+.uploadForm-container .upload-form-one {
   width: 100%;
   height: 90%;
   background-color: white;
@@ -177,7 +175,7 @@
   row-gap: 25px;
 }
 
-.upload-form-one .row1{
+.upload-form-one .row1 {
   width: 100%;
   height: 30%;
   display: flex;
@@ -185,7 +183,7 @@
   justify-content: space-around;
 }
 
-.row1 input{
+.row1 input {
   width: 242px;
   height: 57px;
   padding: 5px;
@@ -195,7 +193,7 @@
   font-weight: 700;
 }
 
-.row1 .file-button{
+.row1 .file-button {
   width: 200px;
   height: 45px;
   border-radius: 5px;
@@ -205,7 +203,7 @@
   font-weight: 700;
 }
 
-.upload-form-one .row2{
+.upload-form-one .row2 {
   width: 100%;
   height: 30%;
   display: flex;
@@ -213,7 +211,7 @@
   justify-content: space-around;
 }
 
-.row2 input{
+.row2 input {
   width: 242px;
   height: 57px;
   padding: 5px;
@@ -223,7 +221,7 @@
   font-weight: 700;
 }
 
-.upload-form-one .row3{
+.upload-form-one .row3 {
   width: 100%;
   height: 20%;
   display: flex;
@@ -231,24 +229,24 @@
   justify-content: space-evenly;
 }
 
-.row3 .btn{
+.row3 .btn {
   width: 175px;
   height: 45px;
   padding: 10px;
   color: white;
   font-family: var(--poppins);
-  font-weight: 700; 
+  font-weight: 700;
 }
 
-.abort-btn{
+.abort-btn {
   background-color: rgb(255, 0, 0);
 }
 
-.row3 .upload-btn{
+.row3 .upload-btn {
   background: rgb(0, 202, 128);
 }
 
-.sectionContainer .userContents{
+.sectionContainer .userContents {
   width: 100%;
   height: 100%;
   display: flex;
@@ -256,7 +254,7 @@
   row-gap: 5%;
 }
 
-.userContents .buttonContainer{
+.userContents .buttonContainer {
   width: 100%;
   height: 10%;
   display: flex;
@@ -264,7 +262,7 @@
   justify-content: flex-end;
 }
 
-.buttonContainer .export-btn{
+.buttonContainer .export-btn {
   width: 125px;
   height: 45px;
   background-color: rgb(0, 202, 128);
@@ -276,7 +274,7 @@
   border: none;
 }
 
-.userContents .tableContainer{
+.userContents .tableContainer {
   width: 100%;
   height: 85%;
   display: flex;
@@ -284,13 +282,13 @@
   justify-content: center;
 }
 
-.tableContainer .users-table{
+.tableContainer .users-table {
   width: 100%;
   max-height: 100%;
   overflow-y: auto;
 }
 
-.users-table table{
+.users-table table {
   width: 100%;
   border: 2px solid black;
   font-family: var(--playpen);
@@ -326,7 +324,7 @@
   text-align: center;
 }
 
-.users-table .remove-btn{
+.users-table .remove-btn {
   padding: 5px;
   border: none;
   border-radius: 5px;
@@ -334,10 +332,6 @@
   color: white;
   font-family: var(--playpen);
 }
-
-
-
-/* Styling for the response button within the table */
 
 .content-container .bottomContents {
   width: 74%;
@@ -382,4 +376,339 @@
   font-family: var(--rocknRoll);
   font-size: 14px;
   cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  * {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+  }
+
+  .content-container {
+    width: 100vw;
+    height: auto;
+    overflow-y: scroll !important;
+    background-color: rgb(62, 69, 76);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .content-container .top-contents {
+    width: 84%;
+    height: auto;
+    margin: 20px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    row-gap: 20px;
+  }
+
+  .content-container .top-contents .btn {
+    width: 175px;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: rgb(23, 132, 199);
+    color: white;
+    font-family: var(--rocknRoll);
+    font-size: 0.8em;
+  }
+
+  .content-container .sectionContainer {
+    width: 90%;
+    height: 500px;
+    padding: 10px;
+    text-align: center;
+    background-color: rgb(44, 49, 53);
+    border-radius: 10px;
+    box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.25);
+    color: white;
+    font-family: var(--rampart);
+    font-size: 1em;
+  }
+
+  .sectionContainer .achievementForm-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .achievementForm-container .topContents {
+    width: 100%;
+    height: 10%;
+    background-color: rgb(0, 202, 128);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    font-family: var(--prosto);
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .achievementForm-container .achievement-form {
+    width: 100%;
+    height: 90%;
+    background-color: white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 25px;
+  }
+
+  .achievement-form .row1 {
+    width: 100%;
+    height: 80%;
+    background-image: url(../Assets/PlaceHolder.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  .row1 input[type="file"] {
+    opacity: 0;
+  }
+
+  .achievement-form input::placeholder {
+    color: black;
+    font-family: var(--poppins);
+    font-weight: 900;
+  }
+
+  .achievement-form .row2 {
+    width: 100%;
+    height: 20%;
+    padding: 5px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  .row2 button {
+    width: 100px;
+    height: 45px;
+    padding: 10px;
+    color: white;
+    font-family: var(--poppins);
+    font-weight: 700;
+  }
+
+  .row2 .abort-btn {
+    background-color: rgb(255, 0, 0);
+  }
+
+  .row2 .post-btn {
+    background-color: rgb(0, 202, 128);
+  }
+
+  .sectionContainer .uploadForm-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .uploadForm-container .topContents {
+    width: 100%;
+    height: 10%;
+    background-color: rgb(0, 202, 128);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    color: black;
+    font-family: var(--prosto);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .uploadForm-container .upload-form-one {
+    width: 100%;
+    height: 90%;
+    background-color: white;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 25px;
+  }
+
+  .upload-form-one .row1 {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .row1 input {
+    width: 175px;
+    height: 35px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: rgb(238, 221, 153);
+    font-family: var(--poppins);
+    font-weight: 700;
+  }
+
+  .row1 .file-button {
+    width: 150px;
+    height: 45px;
+    border-radius: 5px;
+    background-color: rgb(24, 119, 242);
+    color: white;
+    font-family: var(--poppins);
+    font-weight: 700;
+  }
+
+  .upload-form-one .row2 {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .row2 input {
+    width: 150px;
+    height: 35px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: rgb(238, 221, 153);
+    font-family: var(--poppins);
+    font-weight: 700;
+  }
+
+  .upload-form-one .row3 {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  .row3 .btn {
+    width: 100px;
+    height: 45px;
+    padding: 10px;
+    color: white;
+    font-family: var(--poppins);
+    font-weight: 700;
+  }
+
+  .abort-btn {
+    background-color: rgb(255, 0, 0);
+  }
+
+  .row3 .upload-btn {
+    background: rgb(0, 202, 128);
+  }
+
+  .content-container .sectionContainer .userContents {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 5%;
+  }
+
+  .userContents .buttonContainer {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .buttonContainer .export-btn {
+    width: 100px;
+    height: 35px;
+    background-color: rgb(0, 202, 128);
+    color: white;
+    font-family: var(--ubuntu);
+    font-weight: 700;
+    font-size: 0.9em;
+    border-radius: 5px;
+    border: none;
+  }
+
+  .userContents .tableContainer {
+    width: 100%;
+    height: 85%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .tableContainer .users-table {
+    width: 100%;
+    max-height: 100%;
+    overflow-y: auto;
+  }
+
+  .tableContainer .users-table table {
+    width: 228px;
+    border: 2px solid black;
+    font-family: var(--playpen);
+    font-size: 1em;
+  }
+
+  .users-table thead {
+    background-color: #36304a;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+
+  .users-table tbody tr:hover {
+    background-color: #0342ff;
+    color: white;
+    transition: all 0.2s linear 0s;
+  }
+
+  .users-table tbody tr:nth-of-type(even) {
+    background-color: #f7f8fc;
+    color: black !important;
+  }
+
+  .users-table tbody tr:nth-of-type(even):hover {
+    background-color: #0342ff;
+    color: white;
+    transition: all 0.2s linear 0s;
+  }
+
+  .users-table tbody td {
+    padding: 2px 0px;
+    text-align: center;
+  }
+
+  .users-table .remove-btn {
+    padding: 2px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(255, 0, 0);
+    color: white;
+    font-family: var(--playpen);
+  }
+
+  .content-container .bottomContents {
+    width: 74%;
+    height: 14%;
+    margin: 50px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 }

@@ -1,8 +1,10 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
+import Slider from "react-slick";
 import "../CSS/MainPage.css";
 
-/* Assets */
+import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
+
 import Logo from "../Assets/Logo.png";
 import SI from "../Assets/Search Icon 1.png";
 import FFCS1 from "../Assets/FFCS1.png";
@@ -15,50 +17,63 @@ import Others1 from "../Assets/Others1.png";
 import Others2 from "../Assets/Others2.png";
 import User from "../Assets/User.png";
 
-// Placeholder images in case API call fails or is not available
-import placeholder1 from "../Assets/Mohamed Zubair.jpg";
-import placeholder2 from "../Assets/Madasamy.jpg";
+import img1 from "../Assets/Developer.png";
+import img2 from "../Assets/Design.png";
+import img3 from "../Assets/User.png";
+import img4 from "../Assets/Events1.png";
 
 function StudentMainPage() {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const userDropDown = useRef(null);
-  const onCampus = useRef(null);
+  const buttonsDD = useRef(null);
   const [isOnCampus, setIsOnCampus] = useState(true);
+  const [showButtonsDD, setShowButtonsDD] = useState(false);
+  const [imageIndex, setImageIndex] = useState(0);
   const Navigate = useNavigate();
 
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [images, setImages] = useState([placeholder1, placeholder2]);
+  const images = [img1, img2, img3, img4];
 
-  useEffect(() => {
-    // Fetch images from the API when the component mounts
-    fetch('/api/shining-stars')  // Replace with your API endpoint
-      .then(response => response.json())
-      .then(data => {
-        if (data && data.length > 0) {
-          setImages(data);
-        }
-      })
-      .catch(error => {
-        console.error('Error fetching images:', error);
-        // Keep placeholders if API call fails
-      });
+  const NextArrow = ({ onClick }) => {
+    return (
+      <div className="arrow next" onClick={onClick}>
+        <FaArrowRight />
+      </div>
+    );
+  };
 
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 10000); // Change image every 10 seconds
+  const PrevArrow = ({ onClick }) => {
+    return (
+      <div className="arrow prev" onClick={onClick}>
+        <FaArrowLeft />
+      </div>
+    );
+  };
 
-    return () => clearInterval(interval); // Cleanup interval on component unmount
-  }, []);
-
-  function theme(e) {
-    e.target.classList.toggle("on");
-    setIsDarkMode(!isDarkMode);
-  }
+  const settings = {
+    infinite: true,
+    lazyLoad: true,
+    speed: 300,
+    slidesToShow: 3,
+    centerMode: true,
+    centerPadding: 0,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
+    beforeChange: (current, next) => setImageIndex(next),
+  };
 
   useEffect(() => {
     document.body.style.backgroundColor = isDarkMode ? "black" : "white";
     document.body.style.color = isDarkMode ? "white" : "black";
   }, [isDarkMode]);
+
+  useEffect(() => {
+    buttonsDD.current.style.display = showButtonsDD ? "flex" : "none";
+  }, [showButtonsDD]);
+
+  function theme(e) {
+    e.target.classList.toggle("on");
+    setIsDarkMode(!isDarkMode);
+  }
 
   function showDropDown(e) {
     if (e.target.hasAttribute("class", "links")) {
@@ -76,17 +91,14 @@ function StudentMainPage() {
     userDropDown.current.classList.toggle("show");
   }
 
-  function handleOncampus() {
+  function handleOncampus(e) {
     setIsOnCampus(!isOnCampus);
+    e.target.style.backgroundColor = isOnCampus ? "green" : "red";
   }
 
-  useEffect(() => {
-    if (isOnCampus) {
-      onCampus.current.style.backgroundColor = "green";
-    } else {
-      onCampus.current.style.backgroundColor = "red";
-    }
-  }, [isOnCampus]);
+  function handleShowButtonDD() {
+    setShowButtonsDD(!showButtonsDD);
+  }
 
   function handleLogout() {
     Navigate("/");
@@ -106,11 +118,10 @@ function StudentMainPage() {
               <div className="toggle-btn" onClick={(e) => theme(e)}>
                 <div className="btn"></div>
               </div>
-              <button
-                className="oncampus-btn btn"
-                ref={onCampus}
-                onClick={handleOncampus}
-              >
+              <div className="down-btn" onClick={handleShowButtonDD}>
+                ▼
+              </div>
+              <button className="oncampus-btn btn" onClick={handleOncampus}>
                 Oncampus
               </button>
               <button className="queries-btn btn">
@@ -119,11 +130,28 @@ function StudentMainPage() {
               <button className="logout-btn btn" onClick={handleLogout}>
                 Logout
               </button>
+              <div className="buttons-dd" ref={buttonsDD}>
+                <button
+                  className="oncampus-btn dd-btn"
+                  onClick={(e) => {
+                    handleOncampus(e);
+                  }}
+                >
+                  Oncampus
+                </button>
+                <button className="queries-btn dd-btn">
+                  <a href="mailto:mohamedzubair235@gmail.com">Queries</a>
+                </button>
+                <button className="logout-btn dd-btn" onClick={handleLogout}>
+                  Logout
+                </button>
+              </div>
             </div>
           </div>
         </div>
         <div className="side-nav-bar">
           <div className="top-items">
+            {/* <div className="expansion-logo">➲</div> */}
             <div className="searchBar">
               <input type="search" />
               <img src={SI} alt="search-icon" />
@@ -272,11 +300,15 @@ function StudentMainPage() {
           </div>
         </div>
         <div className="shiningStar-container">
-          <img
-            src={images[currentImageIndex]}
-            alt="shining-star"
-            className="shiningStarImage"
-          />
+          <Slider {...settings}>
+            {images.map((img, idx) => (
+              <div
+                className={idx === imageIndex ? "slide activeSlide" : "slide "}
+              >
+                <img src={img} alt={img} />
+              </div>
+            ))}
+          </Slider>
         </div>
         <div className="placementInfo-container"></div>
       </div>

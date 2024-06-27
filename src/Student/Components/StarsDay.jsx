@@ -6,19 +6,15 @@ import "../CSS/Starsday.css";
 import Home from "../Assets/Home Icon.jpg";
 
 function StarsDay() {
-  // Initialize the navigate function from react-router-dom
   const Navigate = useNavigate();
 
-  // Refs for DOM elements
   const participationFormContainer = useRef(null);
   const registeredPopup = useRef(null);
 
-  // Function to navigate to the main page
   function handleHomeNavigation() {
     Navigate("/studentMainpage");
   }
 
-  // Functions to handle opening and closing new participation form
   function handleOpenNewparticipation() {
     participationFormContainer.current.classList.add("show");
   }
@@ -27,7 +23,6 @@ function StarsDay() {
     participationFormContainer.current.classList.remove("show");
   }
 
-  // Functions to handle opening and closing the registered popup
   function handleOpenPopup() {
     registeredPopup.current.classList.add("show");
   }
@@ -36,12 +31,9 @@ function StarsDay() {
     registeredPopup.current.classList.remove("show");
   }
 
-  // JSX structure for the StarsDay component
   return (
     <>
-      {/* Main container for the StarsDay component */}
       <div className="starsday-container">
-        {/* Top bar with a home button */}
         <div className="topBar">
           <button className="home-btn" onClick={handleHomeNavigation}>
             <img src={Home} alt="" />
@@ -49,8 +41,8 @@ function StarsDay() {
           </button>
         </div>
 
-        {/* Agenda container with register and participate buttons */}
         <div className="agenda-container">
+          <div className="agenda">stars day poster will be placed here...</div>
           <div className="bottom-items">
             <button className="register-btn" onClick={handleOpenPopup}>
               Register
@@ -64,14 +56,12 @@ function StarsDay() {
           </div>
         </div>
 
-        {/* Participation details heading */}
         <h2 className="participation-details">Participation Details</h2>
 
-        {/* Table displaying participation details */}
         <div className="participation-details-table">
           <table>
             <thead>
-              <tr>
+              <tr id="top">
                 <th>S.No</th>
                 <th>Event Name</th>
                 <th>By</th>
@@ -93,38 +83,18 @@ function StarsDay() {
           </table>
         </div>
 
-        {/* Table filters for entries */}
         <div className="table-filters">
-          <div className="leftSide">
-            <div className="content-filter">
-              <p>Showing</p>
-              <input type="text" defaultValue={10} list="range-list" />
-              <datalist id="range-list">
-                <select>
-                  <option value="10">10</option>
-                  <option value="50">50</option>
-                  <option value="100">100</option>
-                </select>
-              </datalist>
-              <p>
-                of <span className="rowCount">100</span> Entries
-              </p>
-            </div>
-          </div>
-          <div className="rightSide">
-            <button className="previous-btn">&lt;</button>
-            <button className="next-btn">&gt;</button>
-          </div>
+          <button className="top-btn">
+            <a href="#top">Go to Top</a>
+          </button>
         </div>
       </div>
 
-      {/* Participation form container */}
       <div
         className="participation-form-container"
         ref={participationFormContainer}
       >
         <div className="pf-form">
-          {/* Header for the participation form */}
           <div className="pf-form-header">
             <p>Life is for Participating not for spectating</p>
             <Icon
@@ -136,7 +106,6 @@ function StarsDay() {
             />
           </div>
 
-          {/* Form for participation details */}
           <form>
             <div className="pf-row1">
               <input type="text" placeholder="Event Name" />
@@ -175,7 +144,6 @@ function StarsDay() {
         </div>
       </div>
 
-      {/* Registered popup */}
       <div className="registeredPopup" ref={registeredPopup}>
         <div className="popup">
           <p>Registered Successfully</p>

@@ -1,14 +1,11 @@
-/* Importing fonts from Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Julee&family=Just+Another+Hand&family=Kaushan+Script&family=Lobster&family=Pacifico&family=Playpen+Sans&family=Poppins&family=Prosto+One&family=Rampart+One&family=RocknRoll+One&family=Ubuntu&display=swap");
 
-/* Resetting default margin, padding, and box-sizing */
 * {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
 }
 
-/* Common stylings and variables declared using :root */
 :root {
   --justAnotherHand: "Just Another Hand", cursive;
   --kaushan: "Kaushan Script", cursive;
@@ -24,7 +21,6 @@
   --poetsen: "Poetsen One", sans-serif;
 }
 
-/* Styling for the main container of the 'Dudes' component */
 .dudes-container {
   width: 100vw;
   height: 100vh;
@@ -33,7 +29,6 @@
   align-items: center;
 }
 
-/* Styling for the top bar section */
 .dudes-container .topBar {
   width: 100%;
 }
@@ -53,7 +48,6 @@
   background-color: #1784c7;
 }
 
-/* Styling for the filters section */
 .dudes-container .filters {
   width: 80vw;
   padding: 10px 0px;
@@ -72,7 +66,6 @@
   justify-content: flex-end;
 }
 
-/* Styling for the toggle button */
 .rightSide .toggle {
   padding: 20px;
   border-radius: 5px;
@@ -101,7 +94,6 @@
   background-color: white !important;
 }
 
-/* Styling for the student details table section */
 .dudes-container .student-details-table {
   width: 80vw;
   margin: 20px 0px;
@@ -113,7 +105,6 @@
   font-family: var(--playplen);
 }
 
-/* Styling for table headers and rows */
 table thead {
   background-color: #36304a;
   color: white;
@@ -136,57 +127,210 @@ table tbody tr:nth-of-type(even):hover {
   transition: all 0.2s linear 0s;
 }
 
-/* Styling for table cell content */
 table tbody td {
   padding: 5px 0px;
   text-align: center;
 }
 
-/* Styling for table filters and navigation buttons */
 .dudes-container .table-filters {
   width: 80vw;
   display: flex;
-  justify-content: space-between;
-}
-
-.table-filters .leftSide {
-  width: 50%;
-}
-
-.leftSide .content-filter {
-  width: 100%;
-  display: flex;
   align-items: center;
-  column-gap: 10px;
+  justify-content: center;
 }
 
-/* Styling for the content filter input */
-.content-filter input {
-  width: 50px;
-  border-radius: 5px;
-}
-
-.table-filters .rightSide {
-  display: flex;
-  column-gap: 10px;
-}
-
-/* Styling for navigation buttons */
-.rightSide button {
-  width: 40px;
-  height: 30px;
-  border-radius: 30%;
-  font-weight: 900;
-}
-
-.rightSide .previous-btn {
-  border: 1px solid black;
-  background-color: white;
-  color: #2699fb;
-}
-
-.rightSide .next-btn {
+.table-filters .top-btn {
+  width: 150px;
+  height: 45px;
   border: none;
-  background-color: #2699fb;
-  color: white;
+  border-radius: 5px;
+  background-color: gold;
+}
+
+.top-btn a {
+  text-decoration: none;
+  color: black;
+  font-size: 1em;
+  font-family: var(--poppins);
+}
+
+@media (max-width: 768px) {
+  * {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+  }
+
+  .dudes-container {
+    width: 100vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .topBar {
+    width: 100%;
+    padding: 20px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .topBar button {
+    font-family: var(--prosto);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 5px;
+  }
+
+  .topBar .home-btn {
+    height: 40px;
+    padding: 0px 10px;
+    background-color: #1784c7;
+    margin-left: 0px !important;
+  }
+
+  .topBar .home-btn img {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+  }
+
+  .dudes-container .filters {
+    width: 80%;
+    height: auto;
+    margin: 20px 0px;
+    padding: 10px;
+    font-size: 0.6em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    row-gap: 25px;
+  }
+
+  .filters .leftSide {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .filters .rightSide {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    row-gap: 10px;
+  }
+
+  .rightSide .filter input {
+    height: 30px;
+    border: none;
+    padding: 0px 5px;
+    font-family: var(--rocknRoll);
+  }
+
+  .filters input:hover {
+    outline: 2px solid black;
+  }
+
+  .rightSide .toggle {
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #f7f8fc;
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+  }
+
+  .toggle .toggle-btn {
+    width: 34px;
+    height: 20px;
+    padding: 0px 2px;
+    border-radius: 50px !important;
+    background-color: black !important;
+    transition: all 0.2s linear 0s;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .toggle-btn .btn {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: white !important;
+  }
+
+  .dudes-container .student-details-table {
+    width: 80%;
+    margin: 20px 0px;
+  }
+
+  .student-details-table table {
+    width: 100%;
+    font-family: var(--playplen);
+    font-size: 0.5em;
+    border: 2px solid black;
+  }
+
+  table thead {
+    background-color: #36304a;
+    color: white;
+  }
+
+  table tbody tr:hover {
+    background-color: #0342ff;
+    color: white;
+    transition: all 0.2s linear 0s;
+  }
+
+  table tbody tr:nth-of-type(even) {
+    background-color: #f7f8fc;
+    color: black !important;
+  }
+
+  table tbody tr:nth-of-type(even):hover {
+    background-color: #0342ff;
+    color: white;
+    transition: all 0.2s linear 0s;
+  }
+
+  table tbody td {
+    text-align: center;
+    padding: 2px 0px;
+  }
+
+  .btech-container .table-filters {
+    width: 80vw;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .table-filters .top-btn {
+    width: 100px;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    background-color: gold;
+    font-size: 1em;
+  }
+
+  .top-btn a {
+    text-decoration: none;
+    color: black;
+    font-size: 0.7em;
+    font-family: var(--poppins);
+  }
 }

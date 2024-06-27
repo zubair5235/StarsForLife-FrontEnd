@@ -26,7 +26,7 @@ function AlumniMainPage() {
     setShowRegForm(true);
   }
 
-  function handleAbort(){
+  function handleAbort() {
     setShowRegForm(false);
   }
 
@@ -106,13 +106,24 @@ function AlumniMainPage() {
                     />
                   </div>
                   <div className="row5">
-                    <input type="date" name="" id="" placeholder="Arriving Date"/>
-                    <textarea name="" id="" placeholder="Any other information"></textarea>
+                    <input
+                      type="date"
+                      name=""
+                      id=""
+                      placeholder="Arriving Date"
+                    />
+                    <textarea
+                      name=""
+                      id=""
+                      placeholder="Any other information"
+                    ></textarea>
                   </div>
                 </div>
                 <div className="button-row">
-                    <button className="abort-btn" onClick={handleAbort}>Abort</button>
-                    <button className="register-btn">Register</button>
+                  <button className="abort-btn" onClick={handleAbort}>
+                    Abort
+                  </button>
+                  <button className="register-btn">Register</button>
                 </div>
               </form>
             </div>

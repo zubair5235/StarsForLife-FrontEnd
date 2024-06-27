@@ -1,28 +1,20 @@
-// Importing necessary React hooks and styles
 import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../CSS/Dudes.css";
 
-// Importing the home icon image
 import Home from "../Assets/Home Icon.jpg";
 
-// React functional component for the 'Dudes' page
 function Dudes() {
-  // Creating a navigate function using useNavigate hook
   const Navigate = useNavigate();
 
-  // Ref for the toggle button
   const toggleButton = useRef();
 
-  // Function to handle navigation to the home page
   function handleHomeNavigation() {
     Navigate("/studentMainpage");
   }
 
-  // State to manage the toggle between Department Dudes and District Dudes
   const [inDepartment, setInDepartment] = useState(true);
 
-  // Function to handle the toggle button click and update the state
   function handleToggle() {
     if (inDepartment) {
       toggleButton.current.style.justifyContent = "flex-end";
@@ -33,11 +25,9 @@ function Dudes() {
     }
   }
 
-  // JSX structure for the 'Dudes' component
   return (
     <>
       <div className="dudes-container">
-        {/* Top bar section with home button */}
         <div className="topBar">
           <button className="home-btn" onClick={handleHomeNavigation}>
             <img src={Home} alt="home-icon" />
@@ -45,7 +35,6 @@ function Dudes() {
           </button>
         </div>
 
-        {/* Filters section with toggle button */}
         <div className="filters">
           <div className="leftSide"></div>
           <div className="rightSide">
@@ -63,7 +52,6 @@ function Dudes() {
           </div>
         </div>
 
-        {/* Table displaying student details */}
         <div className="student-details-table">
           <table>
             <thead>
@@ -91,33 +79,14 @@ function Dudes() {
           </table>
         </div>
 
-        {/* Filters and navigation buttons for the table */}
         <div className="table-filters">
-          <div className="leftSide">
-            <div className="content-filter">
-              <p>Showing</p>
-              <input type="text" defaultValue={10} list="range-list" />
-              <datalist id="range-list">
-                <select>
-                  <option value="10">10</option>
-                  <option value="50">50</option>
-                  <option value="100">100</option>
-                </select>
-              </datalist>
-              <p>
-                of <span className="rowCount">100</span> Entries
-              </p>
-            </div>
-          </div>
-          <div className="rightSide">
-            <button className="previous-btn">&lt;</button>
-            <button className="next-btn">&gt;</button>
-          </div>
+          <button className="top-btn">
+            <a href="#top">Go to Top</a>
+          </button>
         </div>
       </div>
     </>
   );
 }
 
-// Exporting the 'Dudes' component
 export default Dudes;

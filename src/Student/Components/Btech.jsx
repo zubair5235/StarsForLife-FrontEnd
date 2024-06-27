@@ -1,41 +1,31 @@
-// Importing necessary modules and assets
 import { useNavigate } from "react-router-dom";
 import { useRef } from "react";
 import { Icon } from "@iconify/react";
-import "../CSS/Btech.css"; // Importing styles for the component
+import "../CSS/Btech.css";
 
 import Home from "../Assets/Home Icon.jpg";
 import Search from "../Assets/Filter-SearchIcon.png";
 
-// Btech React component
 function Btech() {
-  // Initializing the navigate function from React Router
   const Navigate = useNavigate();
 
-  // Creating a ref to manage the contribution form container
   const contributionFormContainer = useRef(null);
 
-  // Function to navigate to the home page
   function handleHomeNavigation() {
     Navigate("/studentMainpage");
   }
 
-  // Function to open the contribution form
   function handleOpenNewContribution() {
     contributionFormContainer.current.classList.add("show");
   }
 
-  // Function to close the contribution form
   function handleCloseNewContribution() {
     contributionFormContainer.current.classList.remove("show");
   }
 
-  // JSX structure of the Btech component
   return (
     <>
-      {/* Main container for the Btech component */}
       <div className="btech-container">
-        {/* Top bar with home button and contribute button */}
         <div className="topBar">
           <button className="home-btn" onClick={handleHomeNavigation}>
             <img src={Home} alt="" />
@@ -49,7 +39,6 @@ function Btech() {
           </button>
         </div>
 
-        {/* Filters section with search bar and department filter */}
         <div className="filters">
           <div className="leftSide">
             <div className="filters-searchBar">
@@ -69,11 +58,10 @@ function Btech() {
           </div>
         </div>
 
-        {/* Materials table with details and actions */}
         <div className="materials-table">
           <table>
             <thead>
-              <tr>
+              <tr id="top">
                 <th>S.No</th>
                 <th>Subject Code</th>
                 <th>Subject Name</th>
@@ -91,7 +79,6 @@ function Btech() {
                 <td>Module 1</td>
                 <td>Admin</td>
                 <td>
-                  {/* Download icon */}
                   <Icon
                     icon="streamline:download-circle-solid"
                     color="black"
@@ -100,7 +87,6 @@ function Btech() {
                   />
                 </td>
                 <td>
-                  {/* Preview icon */}
                   <Icon
                     icon="icon-park-solid:preview-open"
                     color="black"
@@ -113,41 +99,19 @@ function Btech() {
           </table>
         </div>
 
-        {/* Table filters section */}
         <div className="table-filters">
-          <div className="leftSide">
-            <div className="content-filter">
-              <p>Showing</p>
-              <input type="text" defaultValue={10} list="range-list" />
-              <datalist id="range-list">
-                <select>
-                  <option value="10">10</option>
-                  <option value="50">50</option>
-                  <option value="100">100</option>
-                </select>
-              </datalist>
-              <p>
-                of <span className="rowCount">100</span> Entries
-              </p>
-            </div>
-          </div>
-          <div className="rightSide">
-            {/* Navigation buttons */}
-            <button className="previous-btn">&lt;</button>
-            <button className="next-btn">&gt;</button>
-          </div>
+          <button className="top-btn">
+            <a href="#top">Go to Top</a>
+          </button>
         </div>
       </div>
 
-      {/* Contribution form container */}
       <div
         className="contribution-form-container"
         ref={contributionFormContainer}
       >
-        {/* Contribution form structure */}
         <div className="cf-form">
           <div className="cf-form-header">
-            {/* Title and close button */}
             <p>Contribution Form</p>
             <Icon
               icon="ic:round-close"
@@ -158,7 +122,6 @@ function Btech() {
             />
           </div>
           <form>
-            {/* Contribution form rows */}
             <div className="cf-row1">
               <input
                 type="text"
@@ -182,11 +145,12 @@ function Btech() {
               </datalist>
             </div>
             <div className="cf-row2">
-              {/* Input for Materials Name */}
               <input type="text" placeholder="Materials Name" />
+              <button className="fileInput-btn">
+                <input type="file" />
+              </button>
             </div>
             <div className="cf-row3">
-              {/* Contribute button */}
               <button className="confirm-btn">Contribute</button>
             </div>
           </form>
@@ -196,5 +160,4 @@ function Btech() {
   );
 }
 
-// Exporting the Btech component
 export default Btech;

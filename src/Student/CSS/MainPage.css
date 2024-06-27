@@ -1,14 +1,13 @@
-/* Importing fonts from Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Julee&family=Just+Another+Hand&family=Kaushan+Script&family=Lobster&family=Pacifico&family=Playpen+Sans&family=Poppins&family=Prosto+One&family=Rampart+One&family=RocknRoll+One&family=Ubuntu&display=swap");
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
 
-/* Resetting default margin, padding, and box-sizing for all elements */
 * {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
 }
 
-/* Defining custom variables using CSS Variables */
 :root {
   --justAnotherHand: "Just Another Hand", cursive;
   --kaushan: "Kaushan Script", cursive;
@@ -23,12 +22,13 @@
   --rampart: "Rampart One", sans-serif;
 }
 
-/* Styles for the main container */
 .main-container {
   overflow: visible;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
-/* Top navbar styles */
 .top-nav-bar {
   width: 100vw;
   height: 13vh;
@@ -41,7 +41,6 @@
   z-index: 2;
 }
 
-/* Left part of the top navbar */
 .left {
   width: 40%;
   height: 100%;
@@ -51,13 +50,11 @@
   align-items: center;
 }
 
-/* Styles for logo */
 .left .logo img {
   max-height: 70px;
   max-width: 70px;
 }
 
-/* Right part of the top navbar */
 .right {
   width: 60%;
   height: 100%;
@@ -68,7 +65,6 @@
   justify-content: flex-end;
 }
 
-/* Styles for buttons within the right part of the Top Nav Bar */
 .right .buttons {
   width: 70%;
   display: flex;
@@ -86,6 +82,14 @@
   font-weight: 700;
   color: white;
   cursor: pointer;
+}
+
+.buttons .down-btn {
+  display: none;
+}
+
+.buttons .buttons-dd {
+  display: none;
 }
 
 .buttons .oncampus-btn {
@@ -125,12 +129,10 @@
   background-color: white !important;
 }
 
-/* Styles for Toggle Button when in 'on' state */
 .toggle-btn .on {
   justify-content: flex-end;
 }
 
-/* Styles for side navbar */
 .side-nav-bar {
   width: 12.34%;
   height: calc(100vh - 13vh);
@@ -142,7 +144,6 @@
   z-index: 3;
 }
 
-/* Styles for top items within the side navbar */
 .top-items {
   height: 20%;
   display: flex;
@@ -150,7 +151,10 @@
   align-items: center;
 }
 
-/* Styles for search input */
+.expansion-logo {
+  display: none;
+}
+
 .searchBar {
   width: 80%;
   height: 20%;
@@ -170,7 +174,6 @@
   border: none;
 }
 
-/* Styles for search icon */
 .searchBar img {
   width: 20%;
   background-color: #27282a;
@@ -178,7 +181,6 @@
   border-bottom-right-radius: 5px;
 }
 
-/* Styles for the middle items of the side navbar */
 .middle-items {
   height: 60%;
   color: white;
@@ -187,7 +189,6 @@
   justify-content: center;
 }
 
-/* Styles for navigation lists */
 .middle-items nav ul {
   height: 100%;
   list-style: none;
@@ -197,19 +198,16 @@
   justify-content: space-evenly;
 }
 
-/* Styles for List Items within Navigation List */
 .middle-items nav ul li {
   display: flex;
   align-items: center;
 }
 
-/* Styles for List Item Images */
 .middle-items nav ul li img {
   width: 32px;
   height: 32px;
 }
 
-/* Styles for Dropdown */
 .middle-items .dropDown {
   width: auto;
   height: auto;
@@ -223,12 +221,10 @@
   z-index: 1;
 }
 
-/* Styles for showing Dropdown */
 .middle-items .show {
   display: flex;
 }
 
-/* Styles for Dropdown List Items */
 .dropDown li a {
   padding: 5px;
   background-color: white;
@@ -237,14 +233,12 @@
   font-family: var(--rocknRoll);
 }
 
-/* Styles for Dropdown List Item Hover */
 .dropDown li a:hover {
   transition: all 0.2s linear 0s;
   background-color: #1784c7;
   color: white;
 }
 
-/* Styles for Bottom Items within Side Nav Bar */
 .side-nav-bar .bottom-items {
   width: 100%;
   height: 20%;
@@ -254,7 +248,6 @@
   justify-content: center;
 }
 
-/* Styles for User Profile Dropdown */
 .bottom-items .userDropDown {
   padding: 20px;
   background-color: #27282a;
@@ -268,7 +261,6 @@
   top: 84%;
 }
 
-/* Styles for User Dropdown List Items */
 .userDropDown li a {
   padding: 5px;
   background-color: white;
@@ -277,14 +269,12 @@
   font-family: var(--rocknRoll);
 }
 
-/* Styles for User Dropdown List Item Hover */
 .userDropDown li a:hover {
   transition: all 0.2s linear 0s;
   background-color: #1784c7;
   color: white;
 }
 
-/* Styles for specific User Dropdown List Items */
 .userDropDown li:nth-child(1) {
   padding: 5px;
   background-color: #faba34;
@@ -292,40 +282,385 @@
   font-family: var(--rocknRoll);
 }
 
-/* Styles for showing Bottom Items */
 .bottom-items .show {
   display: flex;
 }
 
-.main-container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-}
-
-/* Styles for Shining Star Container */
 .main-container .shiningStar-container {
   width: 87.66%;
   height: calc(60vh - 13vh);
   margin-top: 13vh;
   margin-left: 12.34%;
-  background-color: #f1f5f8;
-  display: flex;
-  justify-content: flex-end;
-  overflow: hidden;
-  position: relative;
+  /* background-color: #f1f5f8; */
+  /* background: linear-gradient(to bottom, #16235e 0%, #020223 100%); */
+  background-color: white;
 }
 
-/* Styles for Slideshow Images */
-.shiningStarImage {
-  width: 100%;
-  height: auto;
-  transition: opacity 1s ease-in-out;
+.shiningStar-container div {
+  height: 100%;
+}
+
+.slide {
+  transform: scale(0.2);
+  transition: transform 300ms;
+  opacity: 0.5;
+}
+
+.slide img {
+  width: 50%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.activeSlide {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.arrow {
+  background-color: transparent;
   position: absolute;
-  top: 0;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.next {
+  right: 0;
+  top: 50%;
+}
+
+.prev {
   left: 0;
+  top: 50%;
+}
+
+.arrow svg {
+  transition: color 300ms;
+}
+
+.arrow svg:hover {
+  color: blue;
 }
 
 .main-container .placementInfo-container {
   width: 87.66%;
+}
+
+@media (max-width: 768px) {
+  * {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+  }
+
+  .main-container {
+    width: 100vw;
+    height: auto;
+  }
+
+  .main-container .top-nav-bar {
+    width: 100%;
+    height: 15vh;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+  }
+
+  .top-nav-bar .left {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .left .logo {
+    width: 70px;
+    height: 70px;
+  }
+
+  .top-nav-bar .right {
+    width: 60%;
+    height: 100%;
+  }
+
+  .right .buttons {
+    width: 70%;
+    background-color: #2c3135;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  .buttons .oncampus-btn {
+    display: none;
+  }
+
+  .buttons .queries-btn {
+    display: none;
+  }
+
+  .buttons .logout-btn {
+    display: none;
+  }
+
+  .buttons .toggle-btn {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .buttons .down-btn {
+    display: block;
+    color: white;
+    font-size: 1.5em;
+  }
+
+  .buttons .buttons-dd {
+    width: 40%;
+    height: 25%;
+    background-color: #2c3135;
+    border-bottom-left-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    position: fixed;
+    top: 15vh;
+    right: 0vh;
+  }
+
+  .buttons-dd .dd-btn {
+    display: block;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
+    color: white;
+  }
+
+  .main-container .side-nav-bar {
+    width: 20%;
+    height: calc(100vh - 15vh);
+    background-color: #2d353a;
+    cursor: pointer;
+    position: fixed;
+    left: 0;
+    top: 15vh;
+    z-index: 3;
+  }
+
+  .top-items {
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .expansion-logo {
+    display: none;
+  }
+
+  .searchBar {
+    width: 80%;
+    height: 20%;
+    display: flex;
+  }
+
+  .searchBar input {
+    width: 80%;
+    font-family: var(--rocknRoll);
+    border: none;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+
+  .searchBar input:focus {
+    outline: none;
+    border: none;
+  }
+
+  .searchBar img {
+    width: 20%;
+    background-color: #27282a;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+
+  .middle-items {
+    height: 60%;
+    color: white;
+    font-family: var(--rampart);
+    font-size: 0.5em;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  .middle-items nav ul {
+    height: 100%;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  .middle-items nav ul li {
+    display: flex;
+    align-items: center;
+  }
+
+  .middle-items nav ul li img {
+    display: none;
+  }
+
+  .middle-items .dropDown {
+    width: auto;
+    height: auto;
+    padding: 10px;
+    background-color: #27282a;
+    display: none;
+    flex-direction: column;
+    row-gap: 10px;
+    position: fixed;
+    left: 20%;
+    z-index: 1;
+  }
+
+  .middle-items .show {
+    display: flex;
+  }
+
+  .dropDown li a {
+    padding: 5px;
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    font-family: var(--rocknRoll);
+  }
+
+  .dropDown li a:hover {
+    transition: all 0.2s linear 0s;
+    background-color: #1784c7;
+    color: white;
+  }
+
+  .side-nav-bar .bottom-items {
+    width: 100%;
+    height: 20%;
+    font-size: 0.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .bottom-items .user-profile img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .bottom-items .userDropDown {
+    padding: 20px;
+    background-color: #27282a;
+    list-style: none;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 10px;
+    position: fixed;
+    left: 20%;
+    top: 84%;
+  }
+
+  .userDropDown li a {
+    padding: 5px;
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    font-family: var(--rocknRoll);
+  }
+
+  .userDropDown li a:hover {
+    transition: all 0.2s linear 0s;
+    background-color: #1784c7;
+    color: white;
+  }
+
+  .userDropDown li:nth-child(1) {
+    padding: 5px;
+    background-color: #faba34;
+    color: black;
+    font-family: var(--rocknRoll);
+  }
+
+  .bottom-items .show {
+    display: flex;
+  }
+
+  .main-container .shiningStar-container {
+    width: 80%;
+    height: calc(60vh - 15vh);
+    margin-top: 15vh;
+    margin-left: 20%;
+    /* background-color: #f1f5f8; */
+    background-color: white;
+  }
+
+  .shiningStar-container div {
+    height: 100%;
+  }
+
+  .slide {
+    transform: scale(0.2);
+    transition: transform 300ms;
+    opacity: 0.5;
+  }
+
+  .slide img {
+    width: 50%;
+    height: 100%;
+    margin: 0 auto;
+  }
+
+  .activeSlide {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+
+  .arrow {
+    background-color: transparent;
+    position: absolute;
+    cursor: pointer;
+    z-index: 10;
+  }
+
+  .next {
+    right: 0;
+    top: 50%;
+  }
+
+  .prev {
+    left: 0;
+    top: 50%;
+  }
+
+  .arrow svg {
+    transition: color 300ms;
+  }
+
+  .arrow svg:hover {
+    color: blue;
+  }
+
+  .main-container .placementInfo-container {
+    width: 80%;
+  }
 }

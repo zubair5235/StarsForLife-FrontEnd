@@ -103,7 +103,11 @@ function App() {
             ></Route>
 
             <Route exact path="/alumnilogin" element={<AlumniLogin />}></Route>
-            <Route exact path="/alumnimainpage" element={<AlumniMainPage/>}></Route>
+            <Route
+              exact
+              path="/alumnimainpage"
+              element={<AlumniMainPage />}
+            ></Route>
           </Routes>
         </div>
       </Router>
